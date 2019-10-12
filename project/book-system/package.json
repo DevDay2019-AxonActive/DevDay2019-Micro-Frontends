@@ -1,0 +1,11 @@
+{
+  "name": "book-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx live-server ."
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,5 +1,5 @@
 !(function(e, t) {
-  'use strict';
+  "use strict";
   function n() {
     var e = C.splice(0, C.length);
     for (We = 0; e.length; ) e.shift().call(null, e.shift());
@@ -13,7 +13,7 @@
     };
   }
   function l(e) {
-    var t = Be.call(e, 'is'),
+    var t = Be.call(e, "is"),
       n = e.nodeName.toUpperCase(),
       r = ie.call(re, t ? ee + t.toUpperCase() : J + n);
     return t && -1 < r && !a(n, t) ? -1 : r;
@@ -31,8 +31,9 @@
     !rt ||
       (o && o !== t) ||
       !t[B] ||
-      'style' === r ||
-      (e.prevValue === e.newValue && ('' !== e.newValue || (n !== l && n !== a))) ||
+      "style" === r ||
+      (e.prevValue === e.newValue &&
+        ("" !== e.newValue || (n !== l && n !== a))) ||
       t[B](r, n === l ? null : e.prevValue, n === a ? null : e.newValue);
   }
   function u(e) {
@@ -43,10 +44,12 @@
   }
   function c(e) {
     nt && ((nt = !1), e.currentTarget.removeEventListener(W, c)),
-      le.length && r((e.target || g).querySelectorAll(le), e.detail === x ? x : _),
+      le.length &&
+        r((e.target || g).querySelectorAll(le), e.detail === x ? x : _),
       Ve &&
         (function() {
-          for (var e, t = 0, n = Ue.length; t < n; t++) ae.contains((e = Ue[t])) || (n--, Ue.splice(t--, 1), p(e, x));
+          for (var e, t = 0, n = Ue.length; t < n; t++)
+            ae.contains((e = Ue[t])) || (n--, Ue.splice(t--, 1), p(e, x));
         })();
   }
   function s(e, t) {
@@ -68,28 +71,36 @@
   }
   function f(e, t) {
     De(e, t),
-      N ? N.observe(e, $e) : (tt && ((e.setAttribute = s), (e[R] = O(e)), e[U](Y, w)), e[U](Q, i)),
+      N
+        ? N.observe(e, $e)
+        : (tt && ((e.setAttribute = s), (e[R] = O(e)), e[U](Y, w)), e[U](Q, i)),
       e[z] && rt && ((e.created = !0), e[z](), (e.created = !1));
   }
   function d(e) {
-    throw new Error('A ' + e + ' type is already registered');
+    throw new Error("A " + e + " type is already registered");
   }
   function p(e, t) {
     var n,
       r,
       o = l(e);
     -1 < o &&
-      !xe.call(e, 'TEMPLATE') &&
+      !xe.call(e, "TEMPLATE") &&
       (I(e, oe[o]),
       (o = 0),
       t !== _ || e[_]
-        ? t !== x || e[x] || ((e[_] = !1), (e[x] = !0), (r = 'disconnected'), (o = 1))
-        : ((e[x] = !1), (e[_] = !0), (r = 'connected'), (o = 1), Ve && ie.call(Ue, e) < 0 && Ue.push(e)),
+        ? t !== x ||
+          e[x] ||
+          ((e[_] = !1), (e[x] = !0), (r = "disconnected"), (o = 1))
+        : ((e[x] = !1),
+          (e[_] = !0),
+          (r = "connected"),
+          (o = 1),
+          Ve && ie.call(Ue, e) < 0 && Ue.push(e)),
       o && (n = e[t + k] || e[r + k]) && n.call(e));
   }
   function h() {}
   function T(e, t, n) {
-    var r = (n && n[q]) || '',
+    var r = (n && n[q]) || "",
       o = t.prototype,
       l = Ne(o),
       a = t.observedAttributes || fe,
@@ -124,7 +135,7 @@
     return t && t.constructor;
   }
   function M(e) {
-    return 'string' == typeof e ? e : (e && e.is) || '';
+    return "string" == typeof e ? e : (e && e.is) || "";
   }
   function E(e) {
     for (var t, n = e[B], r = n ? e.attributes : fe, o = r.length; o--; )
@@ -142,8 +153,8 @@
   }
   function H() {
     Ee && delete e.customElements,
-      me(e, 'customElements', { configurable: !0, value: new h() }),
-      me(e, 'CustomElementRegistry', { configurable: !0, value: h });
+      me(e, "customElements", { configurable: !0, value: new h() }),
+      me(e, "CustomElementRegistry", { configurable: !0, value: h });
     for (
       var t = y.get(/^HTML[A-Z]*[a-z]/), n = t.length;
       n--;
@@ -178,7 +189,7 @@
       var n = M(t);
       return n ? Xe.call(this, e, Oe(n)) : Xe.call(this, e);
     }),
-      Ye || ((et = !0), g[V](''));
+      Ye || ((et = !0), g[V](""));
   }
   var g = e.document,
     b = e.Object,
@@ -189,17 +200,19 @@
         o,
         l = /^[A-Z]+[a-z]/,
         a = function(e, t) {
-          (t = t.toLowerCase()) in i || ((i[e] = (i[e] || []).concat(t)), (i[t] = i[t.toUpperCase()] = e));
+          (t = t.toLowerCase()) in i ||
+            ((i[e] = (i[e] || []).concat(t)), (i[t] = i[t.toUpperCase()] = e));
         },
         i = (b.create || b)(null),
         u = {};
       for (n in e)
         for (o in e[n])
-          for (i[o] = r = e[n][o], t = 0; t < r.length; t++) i[r[t].toLowerCase()] = i[r[t].toUpperCase()] = o;
+          for (i[o] = r = e[n][o], t = 0; t < r.length; t++)
+            i[r[t].toLowerCase()] = i[r[t].toUpperCase()] = o;
       return (
         (u.get = function(e) {
-          return 'string' == typeof e
-            ? i[e] || (l.test(e) ? [] : '')
+          return "string" == typeof e
+            ? i[e] || (l.test(e) ? [] : "")
             : (function(e) {
                 var t,
                   n = [];
@@ -214,150 +227,150 @@
       );
     })({
       collections: {
-        HTMLAllCollection: ['all'],
-        HTMLCollection: ['forms'],
-        HTMLFormControlsCollection: ['elements'],
-        HTMLOptionsCollection: ['options']
+        HTMLAllCollection: ["all"],
+        HTMLCollection: ["forms"],
+        HTMLFormControlsCollection: ["elements"],
+        HTMLOptionsCollection: ["options"]
       },
       elements: {
-        Element: ['element'],
-        HTMLAnchorElement: ['a'],
-        HTMLAppletElement: ['applet'],
-        HTMLAreaElement: ['area'],
-        HTMLAttachmentElement: ['attachment'],
-        HTMLAudioElement: ['audio'],
-        HTMLBRElement: ['br'],
-        HTMLBaseElement: ['base'],
-        HTMLBodyElement: ['body'],
-        HTMLButtonElement: ['button'],
-        HTMLCanvasElement: ['canvas'],
-        HTMLContentElement: ['content'],
-        HTMLDListElement: ['dl'],
-        HTMLDataElement: ['data'],
-        HTMLDataListElement: ['datalist'],
-        HTMLDetailsElement: ['details'],
-        HTMLDialogElement: ['dialog'],
-        HTMLDirectoryElement: ['dir'],
-        HTMLDivElement: ['div'],
-        HTMLDocument: ['document'],
+        Element: ["element"],
+        HTMLAnchorElement: ["a"],
+        HTMLAppletElement: ["applet"],
+        HTMLAreaElement: ["area"],
+        HTMLAttachmentElement: ["attachment"],
+        HTMLAudioElement: ["audio"],
+        HTMLBRElement: ["br"],
+        HTMLBaseElement: ["base"],
+        HTMLBodyElement: ["body"],
+        HTMLButtonElement: ["button"],
+        HTMLCanvasElement: ["canvas"],
+        HTMLContentElement: ["content"],
+        HTMLDListElement: ["dl"],
+        HTMLDataElement: ["data"],
+        HTMLDataListElement: ["datalist"],
+        HTMLDetailsElement: ["details"],
+        HTMLDialogElement: ["dialog"],
+        HTMLDirectoryElement: ["dir"],
+        HTMLDivElement: ["div"],
+        HTMLDocument: ["document"],
         HTMLElement: [
-          'element',
-          'abbr',
-          'address',
-          'article',
-          'aside',
-          'b',
-          'bdi',
-          'bdo',
-          'cite',
-          'code',
-          'command',
-          'dd',
-          'dfn',
-          'dt',
-          'em',
-          'figcaption',
-          'figure',
-          'footer',
-          'header',
-          'i',
-          'kbd',
-          'mark',
-          'nav',
-          'noscript',
-          'rp',
-          'rt',
-          'ruby',
-          's',
-          'samp',
-          'section',
-          'small',
-          'strong',
-          'sub',
-          'summary',
-          'sup',
-          'u',
-          'var',
-          'wbr'
+          "element",
+          "abbr",
+          "address",
+          "article",
+          "aside",
+          "b",
+          "bdi",
+          "bdo",
+          "cite",
+          "code",
+          "command",
+          "dd",
+          "dfn",
+          "dt",
+          "em",
+          "figcaption",
+          "figure",
+          "footer",
+          "header",
+          "i",
+          "kbd",
+          "mark",
+          "nav",
+          "noscript",
+          "rp",
+          "rt",
+          "ruby",
+          "s",
+          "samp",
+          "section",
+          "small",
+          "strong",
+          "sub",
+          "summary",
+          "sup",
+          "u",
+          "var",
+          "wbr"
         ],
-        HTMLEmbedElement: ['embed'],
-        HTMLFieldSetElement: ['fieldset'],
-        HTMLFontElement: ['font'],
-        HTMLFormElement: ['form'],
-        HTMLFrameElement: ['frame'],
-        HTMLFrameSetElement: ['frameset'],
-        HTMLHRElement: ['hr'],
-        HTMLHeadElement: ['head'],
-        HTMLHeadingElement: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-        HTMLHtmlElement: ['html'],
-        HTMLIFrameElement: ['iframe'],
-        HTMLImageElement: ['img'],
-        HTMLInputElement: ['input'],
-        HTMLKeygenElement: ['keygen'],
-        HTMLLIElement: ['li'],
-        HTMLLabelElement: ['label'],
-        HTMLLegendElement: ['legend'],
-        HTMLLinkElement: ['link'],
-        HTMLMapElement: ['map'],
-        HTMLMarqueeElement: ['marquee'],
-        HTMLMediaElement: ['media'],
-        HTMLMenuElement: ['menu'],
-        HTMLMenuItemElement: ['menuitem'],
-        HTMLMetaElement: ['meta'],
-        HTMLMeterElement: ['meter'],
-        HTMLModElement: ['del', 'ins'],
-        HTMLOListElement: ['ol'],
-        HTMLObjectElement: ['object'],
-        HTMLOptGroupElement: ['optgroup'],
-        HTMLOptionElement: ['option'],
-        HTMLOutputElement: ['output'],
-        HTMLParagraphElement: ['p'],
-        HTMLParamElement: ['param'],
-        HTMLPictureElement: ['picture'],
-        HTMLPreElement: ['pre'],
-        HTMLProgressElement: ['progress'],
-        HTMLQuoteElement: ['blockquote', 'q', 'quote'],
-        HTMLScriptElement: ['script'],
-        HTMLSelectElement: ['select'],
-        HTMLShadowElement: ['shadow'],
-        HTMLSlotElement: ['slot'],
-        HTMLSourceElement: ['source'],
-        HTMLSpanElement: ['span'],
-        HTMLStyleElement: ['style'],
-        HTMLTableCaptionElement: ['caption'],
-        HTMLTableCellElement: ['td', 'th'],
-        HTMLTableColElement: ['col', 'colgroup'],
-        HTMLTableElement: ['table'],
-        HTMLTableRowElement: ['tr'],
-        HTMLTableSectionElement: ['thead', 'tbody', 'tfoot'],
-        HTMLTemplateElement: ['template'],
-        HTMLTextAreaElement: ['textarea'],
-        HTMLTimeElement: ['time'],
-        HTMLTitleElement: ['title'],
-        HTMLTrackElement: ['track'],
-        HTMLUListElement: ['ul'],
-        HTMLUnknownElement: ['unknown', 'vhgroupv', 'vkeygen'],
-        HTMLVideoElement: ['video']
+        HTMLEmbedElement: ["embed"],
+        HTMLFieldSetElement: ["fieldset"],
+        HTMLFontElement: ["font"],
+        HTMLFormElement: ["form"],
+        HTMLFrameElement: ["frame"],
+        HTMLFrameSetElement: ["frameset"],
+        HTMLHRElement: ["hr"],
+        HTMLHeadElement: ["head"],
+        HTMLHeadingElement: ["h1", "h2", "h3", "h4", "h5", "h6"],
+        HTMLHtmlElement: ["html"],
+        HTMLIFrameElement: ["iframe"],
+        HTMLImageElement: ["img"],
+        HTMLInputElement: ["input"],
+        HTMLKeygenElement: ["keygen"],
+        HTMLLIElement: ["li"],
+        HTMLLabelElement: ["label"],
+        HTMLLegendElement: ["legend"],
+        HTMLLinkElement: ["link"],
+        HTMLMapElement: ["map"],
+        HTMLMarqueeElement: ["marquee"],
+        HTMLMediaElement: ["media"],
+        HTMLMenuElement: ["menu"],
+        HTMLMenuItemElement: ["menuitem"],
+        HTMLMetaElement: ["meta"],
+        HTMLMeterElement: ["meter"],
+        HTMLModElement: ["del", "ins"],
+        HTMLOListElement: ["ol"],
+        HTMLObjectElement: ["object"],
+        HTMLOptGroupElement: ["optgroup"],
+        HTMLOptionElement: ["option"],
+        HTMLOutputElement: ["output"],
+        HTMLParagraphElement: ["p"],
+        HTMLParamElement: ["param"],
+        HTMLPictureElement: ["picture"],
+        HTMLPreElement: ["pre"],
+        HTMLProgressElement: ["progress"],
+        HTMLQuoteElement: ["blockquote", "q", "quote"],
+        HTMLScriptElement: ["script"],
+        HTMLSelectElement: ["select"],
+        HTMLShadowElement: ["shadow"],
+        HTMLSlotElement: ["slot"],
+        HTMLSourceElement: ["source"],
+        HTMLSpanElement: ["span"],
+        HTMLStyleElement: ["style"],
+        HTMLTableCaptionElement: ["caption"],
+        HTMLTableCellElement: ["td", "th"],
+        HTMLTableColElement: ["col", "colgroup"],
+        HTMLTableElement: ["table"],
+        HTMLTableRowElement: ["tr"],
+        HTMLTableSectionElement: ["thead", "tbody", "tfoot"],
+        HTMLTemplateElement: ["template"],
+        HTMLTextAreaElement: ["textarea"],
+        HTMLTimeElement: ["time"],
+        HTMLTitleElement: ["title"],
+        HTMLTrackElement: ["track"],
+        HTMLUListElement: ["ul"],
+        HTMLUnknownElement: ["unknown", "vhgroupv", "vkeygen"],
+        HTMLVideoElement: ["video"]
       },
       nodes: {
-        Attr: ['node'],
-        Audio: ['audio'],
-        CDATASection: ['node'],
-        CharacterData: ['node'],
-        Comment: ['#comment'],
-        Document: ['#document'],
-        DocumentFragment: ['#document-fragment'],
-        DocumentType: ['node'],
-        HTMLDocument: ['#document'],
-        Image: ['img'],
-        Option: ['option'],
-        ProcessingInstruction: ['node'],
-        ShadowRoot: ['#shadow-root'],
-        Text: ['#text'],
-        XMLDocument: ['xml']
+        Attr: ["node"],
+        Audio: ["audio"],
+        CDATASection: ["node"],
+        CharacterData: ["node"],
+        Comment: ["#comment"],
+        Document: ["#document"],
+        DocumentFragment: ["#document-fragment"],
+        DocumentType: ["node"],
+        HTMLDocument: ["#document"],
+        Image: ["img"],
+        Option: ["option"],
+        ProcessingInstruction: ["node"],
+        ShadowRoot: ["#shadow-root"],
+        Text: ["#text"],
+        XMLDocument: ["xml"]
       }
     });
-  'object' != typeof t && (t = { type: t || 'auto' });
+  "object" != typeof t && (t = { type: t || "auto" });
   var C,
     w,
     A,
@@ -367,41 +380,41 @@
     I,
     F,
     S,
-    V = 'registerElement',
+    V = "registerElement",
     P = (1e5 * e.Math.random()) >> 0,
-    R = '__' + V + P,
-    U = 'addEventListener',
-    _ = 'attached',
-    k = 'Callback',
-    x = 'detached',
-    q = 'extends',
-    B = 'attributeChanged' + k,
+    R = "__" + V + P,
+    U = "addEventListener",
+    _ = "attached",
+    k = "Callback",
+    x = "detached",
+    q = "extends",
+    B = "attributeChanged" + k,
     Z = _ + k,
-    j = 'connected' + k,
-    G = 'disconnected' + k,
-    z = 'created' + k,
+    j = "connected" + k,
+    G = "disconnected" + k,
+    z = "created" + k,
     K = x + k,
-    X = 'ADDITION',
-    $ = 'REMOVAL',
-    Q = 'DOMAttrModified',
-    W = 'DOMContentLoaded',
-    Y = 'DOMSubtreeModified',
-    J = '<',
-    ee = '=',
+    X = "ADDITION",
+    $ = "REMOVAL",
+    Q = "DOMAttrModified",
+    W = "DOMContentLoaded",
+    Y = "DOMSubtreeModified",
+    J = "<",
+    ee = "=",
     te = /^[A-Z][._A-Z0-9]*-[-._A-Z0-9]*$/,
     ne = [
-      'ANNOTATION-XML',
-      'COLOR-PROFILE',
-      'FONT-FACE',
-      'FONT-FACE-SRC',
-      'FONT-FACE-URI',
-      'FONT-FACE-FORMAT',
-      'FONT-FACE-NAME',
-      'MISSING-GLYPH'
+      "ANNOTATION-XML",
+      "COLOR-PROFILE",
+      "FONT-FACE",
+      "FONT-FACE-SRC",
+      "FONT-FACE-URI",
+      "FONT-FACE-FORMAT",
+      "FONT-FACE-NAME",
+      "MISSING-GLYPH"
     ],
     re = [],
     oe = [],
-    le = '',
+    le = "",
     ae = g.documentElement,
     ie =
       re.indexOf ||
@@ -419,9 +432,10 @@
     he = b.getPrototypeOf,
     Te = b.setPrototypeOf,
     Le = !!b.__proto__,
-    Me = '__dreCEv1',
+    Me = "__dreCEv1",
     Ee = e.customElements,
-    ve = !/^force/.test(t.type) && !!(Ee && Ee.define && Ee.get && Ee.whenDefined),
+    ve =
+      !/^force/.test(t.type) && !!(Ee && Ee.define && Ee.get && Ee.whenDefined),
     He = b.create || b,
     ge =
       e.Map ||
@@ -477,7 +491,8 @@
         : pe && de
         ? (function() {
             function e(e, t) {
-              for (var n, r = pe(t), o = 0, l = r.length; o < l; o++) ce.call(e, (n = r[o])) || me(e, n, de(t, n));
+              for (var n, r = pe(t), o = 0, l = r.length; o < l; o++)
+                ce.call(e, (n = r[o])) || me(e, n, de(t, n));
             }
             return function(t, n) {
               do {
@@ -538,12 +553,16 @@
     rt = !0;
   if (
     (Ie &&
-      (((S = g.createElement('div')).innerHTML = '<div><div></div></div>'),
+      (((S = g.createElement("div")).innerHTML = "<div><div></div></div>"),
       new Ie(function(e, t) {
-        if (e[0] && 'childList' == e[0].type && !e[0].removedNodes[0].childNodes.length) {
-          var n = (S = de(Se, 'innerHTML')) && S.set;
+        if (
+          e[0] &&
+          "childList" == e[0].type &&
+          !e[0].removedNodes[0].childNodes.length
+        ) {
+          var n = (S = de(Se, "innerHTML")) && S.set;
           n &&
-            me(Se, 'innerHTML', {
+            me(Se, "innerHTML", {
               set: function(e) {
                 for (; this.lastChild; ) this.removeChild(this.lastChild);
                 n.call(this, e);
@@ -552,7 +571,7 @@
         }
         t.disconnect(), (S = null);
       }).observe(S, { childList: !0, subtree: !0 }),
-      (S.innerHTML = '')),
+      (S.innerHTML = "")),
     Ye ||
       (Te || Le
         ? ((I = function(e, t) {
@@ -584,7 +603,9 @@
                   (o.attrName = e),
                   (o.prevValue = n ? r : null),
                   (o.newValue = t),
-                  n ? (o.MODIFICATION = o.attrChange = 1) : (o[X] = o.attrChange = 0),
+                  n
+                    ? (o.MODIFICATION = o.attrChange = 1)
+                    : (o[X] = o.attrChange = 0),
                   qe.call(this, o);
               },
               o = function(e) {
@@ -597,17 +618,21 @@
                   ((t = new CustomEvent(Q, { bubbles: !0 })).attrName = r.name),
                   (t.prevValue = r.value || null),
                   (t.newValue = r.value = n[o] || null),
-                  null == t.prevValue ? (t[X] = t.attrChange = 0) : (t.MODIFICATION = t.attrChange = 1),
+                  null == t.prevValue
+                    ? (t[X] = t.attrChange = 0)
+                    : (t.MODIFICATION = t.attrChange = 1),
                   qe.call(n, t));
               };
             (e.value = function(e, l, a) {
               e === Q &&
                 this[B] &&
                 this.setAttribute !== r &&
-                ((this[R] = { className: { name: 'class', value: this.className } }),
+                ((this[R] = {
+                  className: { name: "class", value: this.className }
+                }),
                 (this.setAttribute = r),
                 (this.removeAttribute = n),
-                t.call(this, 'propertychange', o)),
+                t.call(this, "propertychange", o)),
                 t.call(this, e, l, a);
             }),
               me(Se, U, e);
@@ -625,18 +650,29 @@
               if (o === e.target) {
                 for (r in ((t = o[R]), (o[R] = n = O(o)), n)) {
                   if (!(r in t)) return A(0, o, r, t[r], n[r], X);
-                  if (n[r] !== t[r]) return A(1, o, r, t[r], n[r], 'MODIFICATION');
+                  if (n[r] !== t[r])
+                    return A(1, o, r, t[r], n[r], "MODIFICATION");
                 }
                 for (r in t) if (!(r in n)) return A(2, o, r, t[r], n[r], $);
               }
             }),
             (A = function(e, t, n, r, o, l) {
-              var a = { attrChange: e, currentTarget: t, attrName: n, prevValue: r, newValue: o };
+              var a = {
+                attrChange: e,
+                currentTarget: t,
+                attrName: n,
+                prevValue: r,
+                newValue: o
+              };
               (a[l] = e), i(a);
             }),
             (O = function(e) {
-              for (var t, n, r = {}, o = e.attributes, l = 0, a = o.length; l < a; l++)
-                'setAttribute' !== (n = (t = o[l]).name) && (r[n] = t.value);
+              for (
+                var t, n, r = {}, o = e.attributes, l = 0, a = o.length;
+                l < a;
+                l++
+              )
+                "setAttribute" !== (n = (t = o[l]).name) && (r[n] = t.value);
               return r;
             }))),
       (g[V] = function(e, t) {
@@ -651,12 +687,12 @@
                   }
                   return new Ie(function(r) {
                     for (var o, l, a, i = 0, u = r.length; i < u; i++)
-                      'childList' === (o = r[i]).type
+                      "childList" === (o = r[i]).type
                         ? (n(o.addedNodes, e), n(o.removedNodes, t))
                         : ((l = o.target),
                           rt &&
                             l[B] &&
-                            'style' !== o.attributeName &&
+                            "style" !== o.attributeName &&
                             (a = Be.call(l, o.attributeName)) !== o.oldValue &&
                             l[B](o.attributeName, o.oldValue, a));
                   });
@@ -668,15 +704,24 @@
                   (Se.attachShadow = function() {
                     return D(_e.apply(this, arguments));
                   }))
-              : ((C = []), g[U]('DOMNodeInserted', u(_)), g[U]('DOMNodeRemoved', u(x))),
+              : ((C = []),
+                g[U]("DOMNodeInserted", u(_)),
+                g[U]("DOMNodeRemoved", u(x))),
             g[U](W, c),
-            g[U]('readystatechange', c),
+            g[U]("readystatechange", c),
             (g.importNode = function(e, t) {
               switch (e.nodeType) {
                 case 1:
                   return m(g, Ke, [e, !!t]);
                 case 11:
-                  for (var n = g.createDocumentFragment(), r = e.childNodes, o = r.length, l = 0; l < o; l++)
+                  for (
+                    var n = g.createDocumentFragment(),
+                      r = e.childNodes,
+                      o = r.length,
+                      l = 0;
+                    l < o;
+                    l++
+                  )
                     n.appendChild(g.importNode(r[l], !!t));
                   return n;
                 default:
@@ -689,8 +734,11 @@
           et)
         )
           return (et = !1);
-        if ((-2 < ie.call(re, ee + n) + ie.call(re, J + n) && d(e), !te.test(n) || -1 < ie.call(ne, n)))
-          throw new Error('The type ' + e + ' is invalid');
+        if (
+          (-2 < ie.call(re, ee + n) + ie.call(re, J + n) && d(e),
+          !te.test(n) || -1 < ie.call(ne, n))
+        )
+          throw new Error("The type " + e + " is invalid");
         var n,
           l,
           a = function() {
@@ -702,8 +750,13 @@
         return (
           s && -1 < ie.call(re, J + f) && d(f),
           (l = re.push((s ? ee : J) + n) - 1),
-          (le = le.concat(le.length ? ',' : '', s ? f + '[is="' + e.toLowerCase() + '"]' : f)),
-          (a.prototype = oe[l] = ce.call(i, 'prototype') ? i.prototype : Ne(Se)),
+          (le = le.concat(
+            le.length ? "," : "",
+            s ? f + '[is="' + e.toLowerCase() + '"]' : f
+          )),
+          (a.prototype = oe[l] = ce.call(i, "prototype")
+            ? i.prototype
+            : Ne(Se)),
           le.length && r(g.querySelectorAll(le), _),
           a
         );
@@ -711,18 +764,20 @@
       (g.createElement = Xe = function(e, t) {
         var n = M(t),
           r = n ? ze.call(g, e, Oe(n)) : ze.call(g, e),
-          o = '' + e,
+          o = "" + e,
           l = ie.call(re, (n ? ee : J) + (n || o).toUpperCase()),
           i = -1 < l;
         return (
-          n && (r.setAttribute('is', (n = n.toLowerCase())), i && (i = a(o.toUpperCase(), n))),
+          n &&
+            (r.setAttribute("is", (n = n.toLowerCase())),
+            i && (i = a(o.toUpperCase(), n))),
           (rt = !g.createElement.innerHTMLHelper),
           i && F(r, oe[l]),
           r
         );
       })),
     addEventListener(
-      'beforeunload',
+      "beforeunload",
       function() {
         delete g.createElement, delete g.importNode, delete g[V];
       },
@@ -735,7 +790,9 @@
             if (n) T(e, t, n);
             else {
               var r = e.toUpperCase();
-              (Ce[r] = { constructor: t, create: [r] }), Ae.set(t, r), Ee.define(e, t);
+              (Ce[r] = { constructor: t, create: [r] }),
+                Ae.set(t, r),
+                Ee.define(e, t);
             }
           }
         : T,
@@ -756,12 +813,13 @@
   else if (!t.noBuiltIn)
     try {
       !(function(t, n, r) {
-        var o = new RegExp('^<a\\s+is=(\'|")' + r + '\\1></a>$');
+        var o = new RegExp("^<a\\s+is=('|\")" + r + "\\1></a>$");
         if (
-          ((n[q] = 'a'),
+          ((n[q] = "a"),
           ((t.prototype = Ne(Fe.prototype)).constructor = t),
           e.customElements.define(r, t, n),
-          !o.test(g.createElement('a', { is: r }).outerHTML) || !o.test(new t().outerHTML))
+          !o.test(g.createElement("a", { is: r }).outerHTML) ||
+            !o.test(new t().outerHTML))
         )
           throw n;
       })(
@@ -769,14 +827,14 @@
           return Reflect.construct(Fe, [], e);
         },
         {},
-        'document-register-element-a' + P
+        "document-register-element-a" + P
       );
     } catch (ot) {
       H();
     }
   if (!t.noBuiltIn)
     try {
-      if (ze.call(g, 'a', 'a').outerHTML.indexOf('is') < 0) throw {};
+      if (ze.call(g, "a", "a").outerHTML.indexOf("is") < 0) throw {};
     } catch (lt) {
       Oe = function(e) {
         return { is: e.toLowerCase() };

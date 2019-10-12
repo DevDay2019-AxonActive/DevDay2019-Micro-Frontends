@@ -11,16 +11,20 @@
       n.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r });
     }),
     (n.r = function(e) {
-      'undefined' != typeof Symbol &&
+      "undefined" != typeof Symbol &&
         Symbol.toStringTag &&
-        Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-        Object.defineProperty(e, '__esModule', { value: !0 });
+        Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+        Object.defineProperty(e, "__esModule", { value: !0 });
     }),
     (n.t = function(e, t) {
       if ((1 & t && (e = n(e)), 8 & t)) return e;
-      if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
+      if (4 & t && "object" == typeof e && e && e.__esModule) return e;
       var r = Object.create(null);
-      if ((n.r(r), Object.defineProperty(r, 'default', { enumerable: !0, value: e }), 2 & t && 'string' != typeof e))
+      if (
+        (n.r(r),
+        Object.defineProperty(r, "default", { enumerable: !0, value: e }),
+        2 & t && "string" != typeof e)
+      )
         for (var o in e)
           n.d(
             r,
@@ -40,17 +44,17 @@
           : function() {
               return e;
             };
-      return n.d(t, 'a', t), t;
+      return n.d(t, "a", t), t;
     }),
     (n.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (n.p = ''),
+    (n.p = ""),
     n((n.s = 2));
 })({
-  '0TWp': function(e, t, n) {
+  "0TWp": function(e, t, n) {
     !(function() {
-      'use strict';
+      "use strict";
       !(function(e) {
         var t = e.performance;
         function n(e) {
@@ -59,28 +63,33 @@
         function r(e, n) {
           t && t.measure && t.measure(e, n);
         }
-        n('Zone');
+        n("Zone");
         var o = !0 === e.__zone_symbol__forceDuplicateZoneCheck;
         if (e.Zone) {
-          if (o || 'function' != typeof e.Zone.__symbol__) throw new Error('Zone already loaded.');
+          if (o || "function" != typeof e.Zone.__symbol__)
+            throw new Error("Zone already loaded.");
           return e.Zone;
         }
         var a,
           i = (function() {
             function t(e, t) {
               (this._parent = e),
-                (this._name = t ? t.name || 'unnamed' : '<root>'),
+                (this._name = t ? t.name || "unnamed" : "<root>"),
                 (this._properties = (t && t.properties) || {}),
-                (this._zoneDelegate = new c(this, this._parent && this._parent._zoneDelegate, t));
+                (this._zoneDelegate = new c(
+                  this,
+                  this._parent && this._parent._zoneDelegate,
+                  t
+                ));
             }
             return (
               (t.assertZonePatched = function() {
                 if (e.Promise !== O.ZoneAwarePromise)
                   throw new Error(
-                    'Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten.\nMost likely cause is that a Promise polyfill has been loaded after Zone.js (Polyfilling Promise api is not necessary when zone.js is loaded. If you must load one, do so before loading zone.js.)'
+                    "Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten.\nMost likely cause is that a Promise polyfill has been loaded after Zone.js (Polyfilling Promise api is not necessary when zone.js is loaded. If you must load one, do so before loading zone.js.)"
                   );
               }),
-              Object.defineProperty(t, 'root', {
+              Object.defineProperty(t, "root", {
                 get: function() {
                   for (var e = t.current; e.parent; ) e = e.parent;
                   return e;
@@ -88,14 +97,14 @@
                 enumerable: !0,
                 configurable: !0
               }),
-              Object.defineProperty(t, 'current', {
+              Object.defineProperty(t, "current", {
                 get: function() {
                   return P.zone;
                 },
                 enumerable: !0,
                 configurable: !0
               }),
-              Object.defineProperty(t, 'currentTask', {
+              Object.defineProperty(t, "currentTask", {
                 get: function() {
                   return z;
                 },
@@ -104,20 +113,20 @@
               }),
               (t.__load_patch = function(a, i) {
                 if (O.hasOwnProperty(a)) {
-                  if (o) throw Error('Already loaded patch: ' + a);
-                } else if (!e['__Zone_disable_' + a]) {
-                  var s = 'Zone:' + a;
+                  if (o) throw Error("Already loaded patch: " + a);
+                } else if (!e["__Zone_disable_" + a]) {
+                  var s = "Zone:" + a;
                   n(s), (O[a] = i(e, t, Z)), r(s, s);
                 }
               }),
-              Object.defineProperty(t.prototype, 'parent', {
+              Object.defineProperty(t.prototype, "parent", {
                 get: function() {
                   return this._parent;
                 },
                 enumerable: !0,
                 configurable: !0
               }),
-              Object.defineProperty(t.prototype, 'name', {
+              Object.defineProperty(t.prototype, "name", {
                 get: function() {
                   return this._name;
                 },
@@ -136,11 +145,12 @@
                 return null;
               }),
               (t.prototype.fork = function(e) {
-                if (!e) throw new Error('ZoneSpec required!');
+                if (!e) throw new Error("ZoneSpec required!");
                 return this._zoneDelegate.fork(this, e);
               }),
               (t.prototype.wrap = function(e, t) {
-                if ('function' != typeof e) throw new Error('Expecting function got: ' + e);
+                if ("function" != typeof e)
+                  throw new Error("Expecting function got: " + e);
                 var n = this._zoneDelegate.intercept(this, e, t),
                   r = this;
                 return function() {
@@ -170,11 +180,11 @@
               (t.prototype.runTask = function(e, t, n) {
                 if (e.zone != this)
                   throw new Error(
-                    'A task can only be run in the zone of creation! (Creation: ' +
+                    "A task can only be run in the zone of creation! (Creation: " +
                       (e.zone || y).name +
-                      '; Execution: ' +
+                      "; Execution: " +
                       this.name +
-                      ')'
+                      ")"
                   );
                 if (e.state !== m || (e.type !== D && e.type !== S)) {
                   var r = e.state != b;
@@ -182,7 +192,10 @@
                   var o = z;
                   (z = e), (P = { parent: P, zone: this });
                   try {
-                    e.type == S && e.data && !e.data.isPeriodic && (e.cancelFn = void 0);
+                    e.type == S &&
+                      e.data &&
+                      !e.data.isPeriodic &&
+                      (e.cancelFn = void 0);
                     try {
                       return this._zoneDelegate.invokeTask(this, e, t, n);
                     } catch (a) {
@@ -193,7 +206,9 @@
                       e.state !== w &&
                       (e.type == D || (e.data && e.data.isPeriodic)
                         ? r && e._transitionTo(_, b)
-                        : ((e.runCount = 0), this._updateTaskCount(e, -1), r && e._transitionTo(m, b, m))),
+                        : ((e.runCount = 0),
+                          this._updateTaskCount(e, -1),
+                          r && e._transitionTo(m, b, m))),
                       (P = P.parent),
                       (z = o);
                   }
@@ -204,9 +219,9 @@
                   for (var t = this; t; ) {
                     if (t === e.zone)
                       throw Error(
-                        'can not reschedule task to ' +
+                        "can not reschedule task to " +
                           this.name +
-                          ' which is descendants of the original zone ' +
+                          " which is descendants of the original zone " +
                           e.zone.name
                       );
                     t = t.parent;
@@ -217,9 +232,15 @@
                 try {
                   e = this._zoneDelegate.scheduleTask(this, e);
                 } catch (r) {
-                  throw (e._transitionTo(w, k, m), this._zoneDelegate.handleError(this, r), r);
+                  throw (e._transitionTo(w, k, m),
+                  this._zoneDelegate.handleError(this, r),
+                  r);
                 }
-                return e._zoneDelegates === n && this._updateTaskCount(e, 1), e.state == k && e._transitionTo(_, k), e;
+                return (
+                  e._zoneDelegates === n && this._updateTaskCount(e, 1),
+                  e.state == k && e._transitionTo(_, k),
+                  e
+                );
               }),
               (t.prototype.scheduleMicroTask = function(e, t, n, r) {
                 return this.scheduleTask(new l(E, e, t, n, r, void 0));
@@ -233,31 +254,39 @@
               (t.prototype.cancelTask = function(e) {
                 if (e.zone != this)
                   throw new Error(
-                    'A task can only be cancelled in the zone of creation! (Creation: ' +
+                    "A task can only be cancelled in the zone of creation! (Creation: " +
                       (e.zone || y).name +
-                      '; Execution: ' +
+                      "; Execution: " +
                       this.name +
-                      ')'
+                      ")"
                   );
                 e._transitionTo(T, _, b);
                 try {
                   this._zoneDelegate.cancelTask(this, e);
                 } catch (t) {
-                  throw (e._transitionTo(w, T), this._zoneDelegate.handleError(this, t), t);
+                  throw (e._transitionTo(w, T),
+                  this._zoneDelegate.handleError(this, t),
+                  t);
                 }
-                return this._updateTaskCount(e, -1), e._transitionTo(m, T), (e.runCount = 0), e;
+                return (
+                  this._updateTaskCount(e, -1),
+                  e._transitionTo(m, T),
+                  (e.runCount = 0),
+                  e
+                );
               }),
               (t.prototype._updateTaskCount = function(e, t) {
                 var n = e._zoneDelegates;
                 -1 == t && (e._zoneDelegates = null);
-                for (var r = 0; r < n.length; r++) n[r]._updateTaskCount(e.type, t);
+                for (var r = 0; r < n.length; r++)
+                  n[r]._updateTaskCount(e.type, t);
               }),
               (t.__symbol__ = M),
               t
             );
           })(),
           s = {
-            name: '',
+            name: "",
             onHasTask: function(e, t, n, r) {
               return e.hasTask(n, r);
             },
@@ -280,23 +309,37 @@
                 (this._forkDlgt = n && (n.onFork ? t : t._forkDlgt)),
                 (this._forkCurrZone = n && (n.onFork ? this.zone : t.zone)),
                 (this._interceptZS = n && (n.onIntercept ? n : t._interceptZS)),
-                (this._interceptDlgt = n && (n.onIntercept ? t : t._interceptDlgt)),
-                (this._interceptCurrZone = n && (n.onIntercept ? this.zone : t.zone)),
+                (this._interceptDlgt =
+                  n && (n.onIntercept ? t : t._interceptDlgt)),
+                (this._interceptCurrZone =
+                  n && (n.onIntercept ? this.zone : t.zone)),
                 (this._invokeZS = n && (n.onInvoke ? n : t._invokeZS)),
                 (this._invokeDlgt = n && (n.onInvoke ? t : t._invokeDlgt)),
                 (this._invokeCurrZone = n && (n.onInvoke ? this.zone : t.zone)),
-                (this._handleErrorZS = n && (n.onHandleError ? n : t._handleErrorZS)),
-                (this._handleErrorDlgt = n && (n.onHandleError ? t : t._handleErrorDlgt)),
-                (this._handleErrorCurrZone = n && (n.onHandleError ? this.zone : t.zone)),
-                (this._scheduleTaskZS = n && (n.onScheduleTask ? n : t._scheduleTaskZS)),
-                (this._scheduleTaskDlgt = n && (n.onScheduleTask ? t : t._scheduleTaskDlgt)),
-                (this._scheduleTaskCurrZone = n && (n.onScheduleTask ? this.zone : t.zone)),
-                (this._invokeTaskZS = n && (n.onInvokeTask ? n : t._invokeTaskZS)),
-                (this._invokeTaskDlgt = n && (n.onInvokeTask ? t : t._invokeTaskDlgt)),
-                (this._invokeTaskCurrZone = n && (n.onInvokeTask ? this.zone : t.zone)),
-                (this._cancelTaskZS = n && (n.onCancelTask ? n : t._cancelTaskZS)),
-                (this._cancelTaskDlgt = n && (n.onCancelTask ? t : t._cancelTaskDlgt)),
-                (this._cancelTaskCurrZone = n && (n.onCancelTask ? this.zone : t.zone)),
+                (this._handleErrorZS =
+                  n && (n.onHandleError ? n : t._handleErrorZS)),
+                (this._handleErrorDlgt =
+                  n && (n.onHandleError ? t : t._handleErrorDlgt)),
+                (this._handleErrorCurrZone =
+                  n && (n.onHandleError ? this.zone : t.zone)),
+                (this._scheduleTaskZS =
+                  n && (n.onScheduleTask ? n : t._scheduleTaskZS)),
+                (this._scheduleTaskDlgt =
+                  n && (n.onScheduleTask ? t : t._scheduleTaskDlgt)),
+                (this._scheduleTaskCurrZone =
+                  n && (n.onScheduleTask ? this.zone : t.zone)),
+                (this._invokeTaskZS =
+                  n && (n.onInvokeTask ? n : t._invokeTaskZS)),
+                (this._invokeTaskDlgt =
+                  n && (n.onInvokeTask ? t : t._invokeTaskDlgt)),
+                (this._invokeTaskCurrZone =
+                  n && (n.onInvokeTask ? this.zone : t.zone)),
+                (this._cancelTaskZS =
+                  n && (n.onCancelTask ? n : t._cancelTaskZS)),
+                (this._cancelTaskDlgt =
+                  n && (n.onCancelTask ? t : t._cancelTaskDlgt)),
+                (this._cancelTaskCurrZone =
+                  n && (n.onCancelTask ? this.zone : t.zone)),
                 (this._hasTaskZS = null),
                 (this._hasTaskDlgt = null),
                 (this._hasTaskDlgtOwner = null),
@@ -308,36 +351,64 @@
                 (this._hasTaskDlgtOwner = this),
                 (this._hasTaskCurrZone = e),
                 n.onScheduleTask ||
-                  ((this._scheduleTaskZS = s), (this._scheduleTaskDlgt = t), (this._scheduleTaskCurrZone = this.zone)),
+                  ((this._scheduleTaskZS = s),
+                  (this._scheduleTaskDlgt = t),
+                  (this._scheduleTaskCurrZone = this.zone)),
                 n.onInvokeTask ||
-                  ((this._invokeTaskZS = s), (this._invokeTaskDlgt = t), (this._invokeTaskCurrZone = this.zone)),
+                  ((this._invokeTaskZS = s),
+                  (this._invokeTaskDlgt = t),
+                  (this._invokeTaskCurrZone = this.zone)),
                 n.onCancelTask ||
-                  ((this._cancelTaskZS = s), (this._cancelTaskDlgt = t), (this._cancelTaskCurrZone = this.zone)));
+                  ((this._cancelTaskZS = s),
+                  (this._cancelTaskDlgt = t),
+                  (this._cancelTaskCurrZone = this.zone)));
             }
             return (
               (e.prototype.fork = function(e, t) {
-                return this._forkZS ? this._forkZS.onFork(this._forkDlgt, this.zone, e, t) : new i(e, t);
+                return this._forkZS
+                  ? this._forkZS.onFork(this._forkDlgt, this.zone, e, t)
+                  : new i(e, t);
               }),
               (e.prototype.intercept = function(e, t, n) {
                 return this._interceptZS
-                  ? this._interceptZS.onIntercept(this._interceptDlgt, this._interceptCurrZone, e, t, n)
+                  ? this._interceptZS.onIntercept(
+                      this._interceptDlgt,
+                      this._interceptCurrZone,
+                      e,
+                      t,
+                      n
+                    )
                   : t;
               }),
               (e.prototype.invoke = function(e, t, n, r, o) {
                 return this._invokeZS
-                  ? this._invokeZS.onInvoke(this._invokeDlgt, this._invokeCurrZone, e, t, n, r, o)
+                  ? this._invokeZS.onInvoke(
+                      this._invokeDlgt,
+                      this._invokeCurrZone,
+                      e,
+                      t,
+                      n,
+                      r,
+                      o
+                    )
                   : t.apply(n, r);
               }),
               (e.prototype.handleError = function(e, t) {
                 return (
                   !this._handleErrorZS ||
-                  this._handleErrorZS.onHandleError(this._handleErrorDlgt, this._handleErrorCurrZone, e, t)
+                  this._handleErrorZS.onHandleError(
+                    this._handleErrorDlgt,
+                    this._handleErrorCurrZone,
+                    e,
+                    t
+                  )
                 );
               }),
               (e.prototype.scheduleTask = function(e, t) {
                 var n = t;
                 if (this._scheduleTaskZS)
-                  this._hasTaskZS && n._zoneDelegates.push(this._hasTaskDlgtOwner),
+                  this._hasTaskZS &&
+                    n._zoneDelegates.push(this._hasTaskDlgtOwner),
                     (n = this._scheduleTaskZS.onScheduleTask(
                       this._scheduleTaskDlgt,
                       this._scheduleTaskCurrZone,
@@ -346,29 +417,48 @@
                     )) || (n = t);
                 else if (t.scheduleFn) t.scheduleFn(t);
                 else {
-                  if (t.type != E) throw new Error('Task is missing scheduleFn.');
+                  if (t.type != E)
+                    throw new Error("Task is missing scheduleFn.");
                   v(t);
                 }
                 return n;
               }),
               (e.prototype.invokeTask = function(e, t, n, r) {
                 return this._invokeTaskZS
-                  ? this._invokeTaskZS.onInvokeTask(this._invokeTaskDlgt, this._invokeTaskCurrZone, e, t, n, r)
+                  ? this._invokeTaskZS.onInvokeTask(
+                      this._invokeTaskDlgt,
+                      this._invokeTaskCurrZone,
+                      e,
+                      t,
+                      n,
+                      r
+                    )
                   : t.callback.apply(n, r);
               }),
               (e.prototype.cancelTask = function(e, t) {
                 var n;
                 if (this._cancelTaskZS)
-                  n = this._cancelTaskZS.onCancelTask(this._cancelTaskDlgt, this._cancelTaskCurrZone, e, t);
+                  n = this._cancelTaskZS.onCancelTask(
+                    this._cancelTaskDlgt,
+                    this._cancelTaskCurrZone,
+                    e,
+                    t
+                  );
                 else {
-                  if (!t.cancelFn) throw Error('Task is not cancelable');
+                  if (!t.cancelFn) throw Error("Task is not cancelable");
                   n = t.cancelFn(t);
                 }
                 return n;
               }),
               (e.prototype.hasTask = function(e, t) {
                 try {
-                  this._hasTaskZS && this._hasTaskZS.onHasTask(this._hasTaskDlgt, this._hasTaskCurrZone, e, t);
+                  this._hasTaskZS &&
+                    this._hasTaskZS.onHasTask(
+                      this._hasTaskDlgt,
+                      this._hasTaskCurrZone,
+                      e,
+                      t
+                    );
                 } catch (n) {
                   this.handleError(e, n);
                 }
@@ -377,7 +467,8 @@
                 var n = this._taskCounts,
                   r = n[e],
                   o = (n[e] = r + t);
-                if (o < 0) throw new Error('More tasks executed then were scheduled.');
+                if (o < 0)
+                  throw new Error("More tasks executed then were scheduled.");
                 (0 != r && 0 != o) ||
                   this.hasTask(this.zone, {
                     microTask: n.microTask > 0,
@@ -394,7 +485,7 @@
               (this._zone = null),
                 (this.runCount = 0),
                 (this._zoneDelegates = null),
-                (this._state = 'notScheduled'),
+                (this._state = "notScheduled"),
                 (this.type = n),
                 (this.source = r),
                 (this.data = a),
@@ -418,14 +509,14 @@
                   1 == C && g(), C--;
                 }
               }),
-              Object.defineProperty(t.prototype, 'zone', {
+              Object.defineProperty(t.prototype, "zone", {
                 get: function() {
                   return this._zone;
                 },
                 enumerable: !0,
                 configurable: !0
               }),
-              Object.defineProperty(t.prototype, 'state', {
+              Object.defineProperty(t.prototype, "state", {
                 get: function() {
                   return this._state;
                 },
@@ -446,7 +537,7 @@
                       "', expecting state '" +
                       t +
                       "'" +
-                      (n ? " or '" + n + "'" : '') +
+                      (n ? " or '" + n + "'" : "") +
                       ", was '" +
                       this._state +
                       "'."
@@ -470,9 +561,9 @@
               t
             );
           })(),
-          u = M('setTimeout'),
-          f = M('Promise'),
-          p = M('then'),
+          u = M("setTimeout"),
+          f = M("Promise"),
+          p = M("then"),
           h = [],
           d = !1;
         function v(t) {
@@ -500,16 +591,16 @@
             Z.microtaskDrainDone(), (d = !1);
           }
         }
-        var y = { name: 'NO ZONE' },
-          m = 'notScheduled',
-          k = 'scheduling',
-          _ = 'scheduled',
-          b = 'running',
-          T = 'canceling',
-          w = 'unknown',
-          E = 'microTask',
-          S = 'macroTask',
-          D = 'eventTask',
+        var y = { name: "NO ZONE" },
+          m = "notScheduled",
+          k = "scheduling",
+          _ = "scheduled",
+          b = "running",
+          T = "canceling",
+          w = "unknown",
+          E = "microTask",
+          S = "macroTask",
+          D = "eventTask",
           O = {},
           Z = {
             symbol: M,
@@ -520,7 +611,7 @@
             microtaskDrainDone: j,
             scheduleMicroTask: v,
             showUncaughtError: function() {
-              return !i[M('ignoreConsoleErrorUncaughtError')];
+              return !i[M("ignoreConsoleErrorUncaughtError")];
             },
             patchEventTarget: function() {
               return [];
@@ -536,7 +627,7 @@
               return j;
             },
             setNativePromise: function(e) {
-              e && 'function' == typeof e.resolve && (a = e.resolve(0));
+              e && "function" == typeof e.resolve && (a = e.resolve(0));
             }
           },
           P = { parent: null, zone: new i(null, null) },
@@ -544,41 +635,48 @@
           C = 0;
         function j() {}
         function M(e) {
-          return '__zone_symbol__' + e;
+          return "__zone_symbol__" + e;
         }
-        r('Zone', 'Zone'), (e.Zone = i);
-      })(('undefined' != typeof window && window) || ('undefined' != typeof self && self) || global);
+        r("Zone", "Zone"), (e.Zone = i);
+      })(
+        ("undefined" != typeof window && window) ||
+          ("undefined" != typeof self && self) ||
+          global
+      );
       var e = function(e) {
-        var t = 'function' == typeof Symbol && e[Symbol.iterator],
+        var t = "function" == typeof Symbol && e[Symbol.iterator],
           n = 0;
         return t
           ? t.call(e)
           : {
               next: function() {
-                return e && n >= e.length && (e = void 0), { value: e && e[n++], done: !e };
+                return (
+                  e && n >= e.length && (e = void 0),
+                  { value: e && e[n++], done: !e }
+                );
               }
             };
       };
-      Zone.__load_patch('ZoneAwarePromise', function(t, n, r) {
+      Zone.__load_patch("ZoneAwarePromise", function(t, n, r) {
         var o = Object.getOwnPropertyDescriptor,
           a = Object.defineProperty,
           i = r.symbol,
           s = [],
-          c = i('Promise'),
-          l = i('then'),
-          u = '__creationTrace__';
+          c = i("Promise"),
+          l = i("then"),
+          u = "__creationTrace__";
         (r.onUnhandledError = function(e) {
           if (r.showUncaughtError()) {
             var t = e && e.rejection;
             t
               ? console.error(
-                  'Unhandled Promise rejection:',
+                  "Unhandled Promise rejection:",
                   t instanceof Error ? t.message : t,
-                  '; Zone:',
+                  "; Zone:",
                   e.zone.name,
-                  '; Task:',
+                  "; Task:",
                   e.task && e.task.source,
-                  '; Value:',
+                  "; Value:",
                   t,
                   t instanceof Error ? t.stack : void 0
                 )
@@ -603,12 +701,12 @@
               )
                 e();
           });
-        var f = i('unhandledPromiseRejectionHandler');
+        var f = i("unhandledPromiseRejectionHandler");
         function p(e) {
           r.onUnhandledError(e);
           try {
             var t = n[f];
-            t && 'function' == typeof t && t.call(this, e);
+            t && "function" == typeof t && t.call(this, e);
           } catch (o) {}
         }
         function h(e) {
@@ -620,12 +718,12 @@
         function v(e) {
           return L.reject(e);
         }
-        var g = i('state'),
-          y = i('value'),
-          m = i('finally'),
-          k = i('parentPromiseValue'),
-          _ = i('parentPromiseState'),
-          b = 'Promise.then',
+        var g = i("state"),
+          y = i("value"),
+          m = i("finally"),
+          k = i("parentPromiseValue"),
+          _ = i("parentPromiseState"),
+          b = "Promise.then",
           T = null,
           w = !0,
           E = !1,
@@ -647,8 +745,8 @@
               };
             };
           },
-          Z = 'Promise resolved with itself',
-          P = i('currentTaskTrace');
+          Z = "Promise resolved with itself",
+          P = i("currentTaskTrace");
         function z(e, t, o) {
           var i,
             c = O();
@@ -656,7 +754,8 @@
           if (e[g] === T) {
             var l = null;
             try {
-              ('object' != typeof o && 'function' != typeof o) || (l = o && o.then);
+              ("object" != typeof o && "function" != typeof o) ||
+                (l = o && o.then);
             } catch (v) {
               return (
                 c(function() {
@@ -665,9 +764,15 @@
                 e
               );
             }
-            if (t !== E && o instanceof L && o.hasOwnProperty(g) && o.hasOwnProperty(y) && o[g] !== T)
+            if (
+              t !== E &&
+              o instanceof L &&
+              o.hasOwnProperty(g) &&
+              o.hasOwnProperty(y) &&
+              o[g] !== T
+            )
               j(o), z(e, o[g], o[y]);
-            else if (t !== E && 'function' == typeof l)
+            else if (t !== E && "function" == typeof l)
               try {
                 l.call(o, c(D(e, t)), c(D(e, !1)));
               } catch (v) {
@@ -679,23 +784,35 @@
               e[g] = t;
               var f = e[y];
               if (
-                ((e[y] = o), e[m] === m && t === w && ((e[g] = e[_]), (e[y] = e[k])), t === E && o instanceof Error)
+                ((e[y] = o),
+                e[m] === m && t === w && ((e[g] = e[_]), (e[y] = e[k])),
+                t === E && o instanceof Error)
               ) {
-                var p = n.currentTask && n.currentTask.data && n.currentTask.data[u];
-                p && a(o, P, { configurable: !0, enumerable: !1, writable: !0, value: p });
+                var p =
+                  n.currentTask && n.currentTask.data && n.currentTask.data[u];
+                p &&
+                  a(o, P, {
+                    configurable: !0,
+                    enumerable: !1,
+                    writable: !0,
+                    value: p
+                  });
               }
-              for (var h = 0; h < f.length; ) M(e, f[h++], f[h++], f[h++], f[h++]);
+              for (var h = 0; h < f.length; )
+                M(e, f[h++], f[h++], f[h++], f[h++]);
               if (0 == f.length && t == E) {
                 e[g] = S;
                 try {
                   throw new Error(
-                    'Uncaught (in promise): ' +
+                    "Uncaught (in promise): " +
                       ((i = o) && i.toString === Object.prototype.toString
-                        ? ((i.constructor && i.constructor.name) || '') + ': ' + JSON.stringify(i)
+                        ? ((i.constructor && i.constructor.name) || "") +
+                          ": " +
+                          JSON.stringify(i)
                         : i
                         ? i.toString()
                         : Object.prototype.toString.call(i)) +
-                      (o && o.stack ? '\n' + o.stack : '')
+                      (o && o.stack ? "\n" + o.stack : "")
                   );
                 } catch (v) {
                   var d = v;
@@ -711,21 +828,30 @@
           }
           return e;
         }
-        var C = i('rejectionHandledHandler');
+        var C = i("rejectionHandledHandler");
         function j(e) {
           if (e[g] === S) {
             try {
               var t = n[C];
-              t && 'function' == typeof t && t.call(this, { rejection: e[y], promise: e });
+              t &&
+                "function" == typeof t &&
+                t.call(this, { rejection: e[y], promise: e });
             } catch (o) {}
             e[g] = E;
-            for (var r = 0; r < s.length; r++) e === s[r].promise && s.splice(r, 1);
+            for (var r = 0; r < s.length; r++)
+              e === s[r].promise && s.splice(r, 1);
           }
         }
         function M(e, t, n, r, o) {
           j(e);
           var a = e[g],
-            i = a ? ('function' == typeof r ? r : d) : 'function' == typeof o ? o : v;
+            i = a
+              ? "function" == typeof r
+                ? r
+                : d
+              : "function" == typeof o
+              ? o
+              : v;
           t.scheduleMicroTask(
             b,
             function() {
@@ -744,7 +870,8 @@
         }
         var L = (function() {
           function t(e) {
-            if (!(this instanceof t)) throw new Error('Must be an instanceof Promise.');
+            if (!(this instanceof t))
+              throw new Error("Must be an instanceof Promise.");
             (this[g] = T), (this[y] = []);
             try {
               e && e(D(this, w), D(this, E));
@@ -754,7 +881,7 @@
           }
           return (
             (t.toString = function() {
-              return 'function ZoneAwarePromise() { [native code] }';
+              return "function ZoneAwarePromise() { [native code] }";
             }),
             (t.resolve = function(e) {
               return z(new this(null), w, e);
@@ -814,7 +941,8 @@
                 },
                 f = this;
               try {
-                for (var p = e(t), d = p.next(); !d.done; d = p.next()) u(d.value);
+                for (var p = e(t), d = p.next(); !d.done; d = p.next())
+                  u(d.value);
               } catch (v) {
                 n = { error: v };
               } finally {
@@ -829,7 +957,9 @@
             (t.prototype.then = function(e, t) {
               var r = new this.constructor(null),
                 o = n.current;
-              return this[g] == T ? this[y].push(o, r, e, t) : M(this, o, r, e, t), r;
+              return (
+                this[g] == T ? this[y].push(o, r, e, t) : M(this, o, r, e, t), r
+              );
             }),
             (t.prototype.catch = function(e) {
               return this.then(null, e);
@@ -838,15 +968,20 @@
               var t = new this.constructor(null);
               t[m] = m;
               var r = n.current;
-              return this[g] == T ? this[y].push(r, t, e, e) : M(this, r, t, e, e), t;
+              return (
+                this[g] == T ? this[y].push(r, t, e, e) : M(this, r, t, e, e), t
+              );
             }),
             t
           );
         })();
-        (L.resolve = L.resolve), (L.reject = L.reject), (L.race = L.race), (L.all = L.all);
+        (L.resolve = L.resolve),
+          (L.reject = L.reject),
+          (L.race = L.race),
+          (L.all = L.all);
         var I = (t[c] = t.Promise),
-          x = n.__symbol__('ZoneAwarePromise'),
-          H = o(t, 'Promise');
+          x = n.__symbol__("ZoneAwarePromise"),
+          H = o(t, "Promise");
         (H && !H.configurable) ||
           (H && delete H.writable,
           H && delete H.value,
@@ -855,14 +990,16 @@
             return t[x] ? t[x] : t[c];
           }),
           (H.set = function(e) {
-            e === L ? (t[x] = e) : ((t[c] = e), e.prototype[l] || F(e), r.setNativePromise(e));
+            e === L
+              ? (t[x] = e)
+              : ((t[c] = e), e.prototype[l] || F(e), r.setNativePromise(e));
           }),
-          a(t, 'Promise', H)),
+          a(t, "Promise", H)),
           (t.Promise = L);
-        var R = i('thenPatched');
+        var R = i("thenPatched");
         function F(e) {
           var t = e.prototype,
-            n = o(t, 'then');
+            n = o(t, "then");
           if (!n || (!1 !== n.writable && n.configurable)) {
             var r = t.then;
             (t[l] = r),
@@ -875,26 +1012,33 @@
               (e[R] = !0);
           }
         }
-        return (r.patchThen = F), I && F(I), (Promise[n.__symbol__('uncaughtPromiseErrors')] = s), L;
+        return (
+          (r.patchThen = F),
+          I && F(I),
+          (Promise[n.__symbol__("uncaughtPromiseErrors")] = s),
+          L
+        );
       }),
-        Zone.__load_patch('fetch', function(e, t, n) {
+        Zone.__load_patch("fetch", function(e, t, n) {
           var r = e.fetch,
             o = e.Promise,
-            a = n.symbol('thenPatched'),
-            i = n.symbol('fetchTaskScheduling'),
-            s = n.symbol('fetchTaskAborting');
-          if ('function' == typeof r) {
+            a = n.symbol("thenPatched"),
+            i = n.symbol("fetchTaskScheduling"),
+            s = n.symbol("fetchTaskAborting");
+          if ("function" == typeof r) {
             var c = e.AbortController,
-              l = 'function' == typeof c,
+              l = "function" == typeof c,
               u = null;
             l &&
               ((e.AbortController = function() {
                 var e = new c();
                 return (e.signal.abortController = e), e;
               }),
-              (u = n.patchMethod(c.prototype, 'abort', function(e) {
+              (u = n.patchMethod(c.prototype, "abort", function(e) {
                 return function(t, n) {
-                  return t.task ? t.task.zone.cancelTask(t.task) : e.apply(t, n);
+                  return t.task
+                    ? t.task.zone.cancelTask(t.task)
+                    : e.apply(t, n);
                 };
               })));
             var f = function() {};
@@ -905,7 +1049,7 @@
                 h = p && p.signal;
               return new Promise(function(p, d) {
                 var v = t.current.scheduleMacroTask(
-                  'fetch',
+                  "fetch",
                   f,
                   c,
                   function() {
@@ -924,23 +1068,30 @@
                     }
                     s.then(
                       function(e) {
-                        'notScheduled' !== v.state && v.invoke(), p(e);
+                        "notScheduled" !== v.state && v.invoke(), p(e);
                       },
                       function(e) {
-                        'notScheduled' !== v.state && v.invoke(), d(e);
+                        "notScheduled" !== v.state && v.invoke(), d(e);
                       }
                     );
                   },
                   function() {
                     if (l)
-                      if (h && h.abortController && !h.aborted && 'function' == typeof h.abortController.abort && u)
+                      if (
+                        h &&
+                        h.abortController &&
+                        !h.aborted &&
+                        "function" == typeof h.abortController.abort &&
+                        u
+                      )
                         try {
                           (t.current[s] = !0), u.call(h.abortController);
                         } finally {
                           t.current[s] = !1;
                         }
-                      else d('cancel fetch need a AbortController.signal');
-                    else d('No AbortController supported, can not cancel fetch');
+                      else d("cancel fetch need a AbortController.signal");
+                    else
+                      d("No AbortController supported, can not cancel fetch");
                   }
                 );
                 h && h.abortController && (h.abortController.task = v);
@@ -953,13 +1104,13 @@
         r = Object.getPrototypeOf,
         o = Object.create,
         a = Array.prototype.slice,
-        i = 'addEventListener',
-        s = 'removeEventListener',
+        i = "addEventListener",
+        s = "removeEventListener",
         c = Zone.__symbol__(i),
         l = Zone.__symbol__(s),
-        u = 'true',
-        f = 'false',
-        p = '__zone_symbol__';
+        u = "true",
+        f = "false",
+        p = "__zone_symbol__";
       function h(e, t) {
         return Zone.current.wrap(e, t);
       }
@@ -967,57 +1118,87 @@
         return Zone.current.scheduleMacroTask(e, t, n, r, o);
       }
       var v = Zone.__symbol__,
-        g = 'undefined' != typeof window,
+        g = "undefined" != typeof window,
         y = g ? window : void 0,
-        m = (g && y) || ('object' == typeof self && self) || global,
-        k = 'removeAttribute',
+        m = (g && y) || ("object" == typeof self && self) || global,
+        k = "removeAttribute",
         _ = [null];
       function b(e, t) {
-        for (var n = e.length - 1; n >= 0; n--) 'function' == typeof e[n] && (e[n] = h(e[n], t + '_' + n));
+        for (var n = e.length - 1; n >= 0; n--)
+          "function" == typeof e[n] && (e[n] = h(e[n], t + "_" + n));
         return e;
       }
       function T(e) {
-        return !e || (!1 !== e.writable && !('function' == typeof e.get && void 0 === e.set));
+        return (
+          !e ||
+          (!1 !== e.writable &&
+            !("function" == typeof e.get && void 0 === e.set))
+        );
       }
-      var w = 'undefined' != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope,
-        E = !('nw' in m) && void 0 !== m.process && '[object process]' === {}.toString.call(m.process),
+      var w =
+          "undefined" != typeof WorkerGlobalScope &&
+          self instanceof WorkerGlobalScope,
+        E =
+          !("nw" in m) &&
+          void 0 !== m.process &&
+          "[object process]" === {}.toString.call(m.process),
         S = !E && !w && !(!g || !y.HTMLElement),
-        D = void 0 !== m.process && '[object process]' === {}.toString.call(m.process) && !w && !(!g || !y.HTMLElement),
+        D =
+          void 0 !== m.process &&
+          "[object process]" === {}.toString.call(m.process) &&
+          !w &&
+          !(!g || !y.HTMLElement),
         O = {},
         Z = function(e) {
           if ((e = e || m.event)) {
             var t = O[e.type];
-            t || (t = O[e.type] = v('ON_PROPERTY' + e.type));
+            t || (t = O[e.type] = v("ON_PROPERTY" + e.type));
             var n,
               r = this || e.target || m,
               o = r[t];
             return (
-              S && r === y && 'error' === e.type
-                ? !0 === (n = o && o.call(this, e.message, e.filename, e.lineno, e.colno, e.error)) &&
-                  e.preventDefault()
-                : null == (n = o && o.apply(this, arguments)) || n || e.preventDefault(),
+              S && r === y && "error" === e.type
+                ? !0 ===
+                    (n =
+                      o &&
+                      o.call(
+                        this,
+                        e.message,
+                        e.filename,
+                        e.lineno,
+                        e.colno,
+                        e.error
+                      )) && e.preventDefault()
+                : null == (n = o && o.apply(this, arguments)) ||
+                  n ||
+                  e.preventDefault(),
               n
             );
           }
         };
       function P(e, r, o) {
         var a = t(e, r);
-        if ((!a && o && t(o, r) && (a = { enumerable: !0, configurable: !0 }), a && a.configurable)) {
-          var i = v('on' + r + 'patched');
+        if (
+          (!a && o && t(o, r) && (a = { enumerable: !0, configurable: !0 }),
+          a && a.configurable)
+        ) {
+          var i = v("on" + r + "patched");
           if (!e.hasOwnProperty(i) || !e[i]) {
             delete a.writable, delete a.value;
             var s = a.get,
               c = a.set,
               l = r.substr(2),
               u = O[l];
-            u || (u = O[l] = v('ON_PROPERTY' + l)),
+            u || (u = O[l] = v("ON_PROPERTY" + l)),
               (a.set = function(t) {
                 var n = this;
                 n || e !== m || (n = m),
                   n &&
                     (n[u] && n.removeEventListener(l, Z),
                     c && c.apply(n, _),
-                    'function' == typeof t ? ((n[u] = t), n.addEventListener(l, Z, !1)) : (n[u] = null));
+                    "function" == typeof t
+                      ? ((n[u] = t), n.addEventListener(l, Z, !1))
+                      : (n[u] = null));
               }),
               (a.get = function() {
                 var t = this;
@@ -1026,7 +1207,12 @@
                 if (n) return n;
                 if (s) {
                   var o = s && s.call(this);
-                  if (o) return a.set.call(this, o), 'function' == typeof t[k] && t.removeAttribute(r), o;
+                  if (o)
+                    return (
+                      a.set.call(this, o),
+                      "function" == typeof t[k] && t.removeAttribute(r),
+                      o
+                    );
                 }
                 return null;
               }),
@@ -1036,14 +1222,14 @@
         }
       }
       function z(e, t, n) {
-        if (t) for (var r = 0; r < t.length; r++) P(e, 'on' + t[r], n);
+        if (t) for (var r = 0; r < t.length; r++) P(e, "on" + t[r], n);
         else {
           var o = [];
-          for (var a in e) 'on' == a.substr(0, 2) && o.push(a);
+          for (var a in e) "on" == a.substr(0, 2) && o.push(a);
           for (var i = 0; i < o.length; i++) P(e, o[i], n);
         }
       }
-      var C = v('originalInstance');
+      var C = v("originalInstance");
       function j(e) {
         var t = m[e];
         if (t) {
@@ -1067,23 +1253,23 @@
                   this[C] = new t(n[0], n[1], n[2], n[3]);
                   break;
                 default:
-                  throw new Error('Arg list too long.');
+                  throw new Error("Arg list too long.");
               }
             }),
             I(m[e], t);
           var r,
             o = new t(function() {});
           for (r in o)
-            ('XMLHttpRequest' === e && 'responseBlob' === r) ||
+            ("XMLHttpRequest" === e && "responseBlob" === r) ||
               (function(t) {
-                'function' == typeof o[t]
+                "function" == typeof o[t]
                   ? (m[e].prototype[t] = function() {
                       return this[C][t].apply(this[C], arguments);
                     })
                   : n(m[e].prototype, t, {
                       set: function(n) {
-                        'function' == typeof n
-                          ? ((this[C][t] = h(n, e + '.' + t)), I(this[C][t], n))
+                        "function" == typeof n
+                          ? ((this[C][t] = h(n, e + "." + t)), I(this[C][t], n))
                           : (this[C][t] = n);
                       },
                       get: function() {
@@ -1091,7 +1277,8 @@
                       }
                     });
               })(r);
-          for (r in t) 'prototype' !== r && t.hasOwnProperty(r) && (m[e][r] = t[r]);
+          for (r in t)
+            "prototype" !== r && t.hasOwnProperty(r) && (m[e][r] = t[r]);
         }
       }
       var M = !1;
@@ -1111,7 +1298,7 @@
             M &&
               ((i = l),
               (s = a[n]),
-              'function' == typeof Object.getOwnPropertySymbols &&
+              "function" == typeof Object.getOwnPropertySymbols &&
                 Object.getOwnPropertySymbols(i).forEach(function(e) {
                   var t = Object.getOwnPropertyDescriptor(i, e);
                   Object.defineProperty(s, e, {
@@ -1119,7 +1306,8 @@
                       return i[e];
                     },
                     set: function(n) {
-                      (!t || (t.writable && 'function' == typeof t.set)) && (i[e] = n);
+                      (!t || (t.writable && "function" == typeof t.set)) &&
+                        (i[e] = n);
                     },
                     enumerable: !t || t.enumerable,
                     configurable: !t || t.configurable
@@ -1129,14 +1317,15 @@
         return l;
       }
       function I(e, t) {
-        e[v('OriginalDelegate')] = t;
+        e[v("OriginalDelegate")] = t;
       }
       var x = !1,
         H = !1;
       function R() {
         try {
           var e = y.navigator.userAgent;
-          if (-1 !== e.indexOf('MSIE ') || -1 !== e.indexOf('Trident/')) return !0;
+          if (-1 !== e.indexOf("MSIE ") || -1 !== e.indexOf("Trident/"))
+            return !0;
         } catch (t) {}
         return !1;
       }
@@ -1146,19 +1335,26 @@
         try {
           var e = y.navigator.userAgent;
           return (
-            (-1 === e.indexOf('MSIE ') && -1 === e.indexOf('Trident/') && -1 === e.indexOf('Edge/')) || (H = !0), H
+            (-1 === e.indexOf("MSIE ") &&
+              -1 === e.indexOf("Trident/") &&
+              -1 === e.indexOf("Edge/")) ||
+              (H = !0),
+            H
           );
         } catch (t) {}
       }
-      Zone.__load_patch('toString', function(e) {
+      Zone.__load_patch("toString", function(e) {
         var t = Function.prototype.toString,
-          n = v('OriginalDelegate'),
-          r = v('Promise'),
-          o = v('Error'),
+          n = v("OriginalDelegate"),
+          r = v("Promise"),
+          o = v("Error"),
           a = function() {
-            if ('function' == typeof this) {
+            if ("function" == typeof this) {
               var a = this[n];
-              if (a) return 'function' == typeof a ? t.apply(this[n], arguments) : Object.prototype.toString.call(a);
+              if (a)
+                return "function" == typeof a
+                  ? t.apply(this[n], arguments)
+                  : Object.prototype.toString.call(a);
               if (this === Promise) {
                 var i = e[r];
                 if (i) return t.apply(i, arguments);
@@ -1173,18 +1369,21 @@
         (a[n] = t), (Function.prototype.toString = a);
         var i = Object.prototype.toString;
         Object.prototype.toString = function() {
-          return this instanceof Promise ? '[object Promise]' : i.apply(this, arguments);
+          return this instanceof Promise
+            ? "[object Promise]"
+            : i.apply(this, arguments);
         };
       });
       var A = !1;
-      if ('undefined' != typeof window)
+      if ("undefined" != typeof window)
         try {
-          var B = Object.defineProperty({}, 'passive', {
+          var B = Object.defineProperty({}, "passive", {
             get: function() {
               A = !0;
             }
           });
-          window.addEventListener('test', B, B), window.removeEventListener('test', B, B);
+          window.addEventListener("test", B, B),
+            window.removeEventListener("test", B, B);
         } catch (me) {
           A = !1;
         }
@@ -1192,20 +1391,20 @@
         q = {},
         W = {},
         U = /^__zone_symbol__(\w+)(true|false)$/,
-        X = '__zone_symbol__propagationStopped';
+        X = "__zone_symbol__propagationStopped";
       function G(e, t, n) {
         var o = (n && n.add) || i,
           a = (n && n.rm) || s,
-          c = (n && n.listeners) || 'eventListeners',
-          l = (n && n.rmAll) || 'removeAllListeners',
+          c = (n && n.listeners) || "eventListeners",
+          l = (n && n.rmAll) || "removeAllListeners",
           h = v(o),
-          d = '.' + o + ':',
-          g = 'prependListener',
-          y = '.' + g + ':',
+          d = "." + o + ":",
+          g = "prependListener",
+          y = "." + g + ":",
           m = function(e, t, n) {
             if (!e.isRemoved) {
               var r = e.callback;
-              'object' == typeof r &&
+              "object" == typeof r &&
                 r.handleEvent &&
                 ((e.callback = function(e) {
                   return r.handleEvent(e);
@@ -1214,9 +1413,14 @@
                 e.invoke(e, t, [n]);
               var o = e.options;
               o &&
-                'object' == typeof o &&
+                "object" == typeof o &&
                 o.once &&
-                t[a].call(t, n.type, e.originalDelegate ? e.originalDelegate : e.callback, o);
+                t[a].call(
+                  t,
+                  n.type,
+                  e.originalDelegate ? e.originalDelegate : e.callback,
+                  o
+                );
             }
           },
           k = function(t) {
@@ -1225,7 +1429,13 @@
                 r = n[q[t.type][f]];
               if (r)
                 if (1 === r.length) m(r[0], n, t);
-                else for (var o = r.slice(), a = 0; a < o.length && (!t || !0 !== t[X]); a++) m(o[a], n, t);
+                else
+                  for (
+                    var o = r.slice(), a = 0;
+                    a < o.length && (!t || !0 !== t[X]);
+                    a++
+                  )
+                    m(o[a], n, t);
             }
           },
           _ = function(t) {
@@ -1234,7 +1444,13 @@
                 r = n[q[t.type][u]];
               if (r)
                 if (1 === r.length) m(r[0], n, t);
-                else for (var o = r.slice(), a = 0; a < o.length && (!t || !0 !== t[X]); a++) m(o[a], n, t);
+                else
+                  for (
+                    var o = r.slice(), a = 0;
+                    a < o.length && (!t || !0 !== t[X]);
+                    a++
+                  )
+                    m(o[a], n, t);
             }
           };
         function b(t, n) {
@@ -1258,17 +1474,28 @@
             z = (T[v(l)] = T[l]);
           function C(e) {
             A ||
-              'boolean' == typeof D.options ||
+              "boolean" == typeof D.options ||
               null == D.options ||
               ((e.options = !!D.options.capture), (D.options = e.options));
           }
           n && n.prepend && (w = T[v(n.prepend)] = T[n.prepend]);
           var j = i
               ? function(e) {
-                  if (!D.isExisting) return C(e), O.call(D.target, D.eventName, D.capture ? _ : k, D.options);
+                  if (!D.isExisting)
+                    return (
+                      C(e),
+                      O.call(
+                        D.target,
+                        D.eventName,
+                        D.capture ? _ : k,
+                        D.options
+                      )
+                    );
                 }
               : function(e) {
-                  return C(e), O.call(D.target, D.eventName, e.invoke, D.options);
+                  return (
+                    C(e), O.call(D.target, D.eventName, e.invoke, D.options)
+                  );
                 },
             M = i
               ? function(e) {
@@ -1282,11 +1509,18 @@
                         if (r[o] === e) {
                           r.splice(o, 1),
                             (e.isRemoved = !0),
-                            0 === r.length && ((e.allRemoved = !0), (e.target[n] = null));
+                            0 === r.length &&
+                              ((e.allRemoved = !0), (e.target[n] = null));
                           break;
                         }
                   }
-                  if (e.allRemoved) return Z.call(e.target, e.eventName, e.capture ? _ : k, e.options);
+                  if (e.allRemoved)
+                    return Z.call(
+                      e.target,
+                      e.eventName,
+                      e.capture ? _ : k,
+                      e.options
+                    );
                 }
               : function(e) {
                   return Z.call(e.target, e.eventName, e.invoke, e.options);
@@ -1296,9 +1530,12 @@
                 ? n.diff
                 : function(e, t) {
                     var n = typeof t;
-                    return ('function' === n && e.callback === t) || ('object' === n && e.originalDelegate === t);
+                    return (
+                      ("function" === n && e.callback === t) ||
+                      ("object" === n && e.originalDelegate === t)
+                    );
                   },
-            x = Zone[Zone.__symbol__('BLACK_LISTED_EVENTS')],
+            x = Zone[Zone.__symbol__("BLACK_LISTED_EVENTS")],
             H = function(t, n, r, o, a, c) {
               return (
                 void 0 === a && (a = !1),
@@ -1308,16 +1545,19 @@
                     h = arguments[0],
                     d = arguments[1];
                   if (!d) return t.apply(this, arguments);
-                  if (E && 'uncaughtException' === h) return t.apply(this, arguments);
+                  if (E && "uncaughtException" === h)
+                    return t.apply(this, arguments);
                   var v = !1;
-                  if ('function' != typeof d) {
+                  if ("function" != typeof d) {
                     if (!d.handleEvent) return t.apply(this, arguments);
                     v = !0;
                   }
                   if (!s || s(t, d, l, arguments)) {
                     var g,
                       y = arguments[2];
-                    if (x) for (var k = 0; k < x.length; k++) if (h === x[k]) return t.apply(this, arguments);
+                    if (x)
+                      for (var k = 0; k < x.length; k++)
+                        if (h === x[k]) return t.apply(this, arguments);
                     var _ = !1;
                     void 0 === y
                       ? (g = !1)
@@ -1335,13 +1575,17 @@
                         Z = (S ? S(h) : h) + u,
                         P = p + O,
                         z = p + Z;
-                      (q[h] = {}), (q[h][f] = P), (q[h][u] = z), (b = g ? z : P);
+                      (q[h] = {}),
+                        (q[h][f] = P),
+                        (q[h][u] = z),
+                        (b = g ? z : P);
                     }
                     var C,
                       j = l[b],
                       M = !1;
                     if (j) {
-                      if (((M = !0), m)) for (k = 0; k < j.length; k++) if (L(j[k], d)) return;
+                      if (((M = !0), m))
+                        for (k = 0; k < j.length; k++) if (L(j[k], d)) return;
                     } else j = l[b] = [];
                     var I = l.constructor.name,
                       H = W[I];
@@ -1360,7 +1604,7 @@
                       (D.target = null),
                       R && (R.taskData = null),
                       _ && (y.once = !0),
-                      (A || 'boolean' != typeof F.options) && (F.options = y),
+                      (A || "boolean" != typeof F.options) && (F.options = y),
                       (F.target = l),
                       (F.capture = g),
                       (F.eventName = h),
@@ -1390,7 +1634,8 @@
                 n = this || e,
                 r = arguments[0],
                 o = arguments[2];
-              t = void 0 !== o && (!0 === o || (!1 !== o && !!o && !!o.capture));
+              t =
+                void 0 !== o && (!0 === o || (!1 !== o && !!o && !!o.capture));
               var a = arguments[1];
               if (!a) return Z.apply(this, arguments);
               if (!s || s(Z, a, n, arguments)) {
@@ -1414,7 +1659,14 @@
               }
             }),
             (T[c] = function() {
-              for (var t = arguments[0], n = [], r = V(this || e, S ? S(t) : t), o = 0; o < r.length; o++) {
+              for (
+                var t = arguments[0],
+                  n = [],
+                  r = V(this || e, S ? S(t) : t),
+                  o = 0;
+                o < r.length;
+                o++
+              ) {
                 var a = r[o];
                 n.push(a.originalDelegate ? a.originalDelegate : a.callback);
               }
@@ -1431,21 +1683,35 @@
                   if (o) {
                     var s = o.slice();
                     for (h = 0; h < s.length; h++)
-                      this[a].call(this, n, (c = s[h]).originalDelegate ? c.originalDelegate : c.callback, c.options);
+                      this[a].call(
+                        this,
+                        n,
+                        (c = s[h]).originalDelegate
+                          ? c.originalDelegate
+                          : c.callback,
+                        c.options
+                      );
                   }
                   if (i)
                     for (s = i.slice(), h = 0; h < s.length; h++) {
                       var c;
-                      this[a].call(this, n, (c = s[h]).originalDelegate ? c.originalDelegate : c.callback, c.options);
+                      this[a].call(
+                        this,
+                        n,
+                        (c = s[h]).originalDelegate
+                          ? c.originalDelegate
+                          : c.callback,
+                        c.options
+                      );
                     }
                 }
               } else {
                 for (var p = Object.keys(t), h = 0; h < p.length; h++) {
                   var d = U.exec(p[h]),
                     v = d && d[1];
-                  v && 'removeListener' !== v && this[l].call(this, v);
+                  v && "removeListener" !== v && this[l].call(this, v);
                 }
-                this[l].call(this, 'removeListener');
+                this[l].call(this, "removeListener");
               }
               if (b) return this;
             }),
@@ -1471,7 +1737,7 @@
         }
         return n;
       }
-      var K = v('zoneTask');
+      var K = v("zoneTask");
       function J(e, t, n, r) {
         var o = null,
           a = null;
@@ -1485,7 +1751,9 @@
                 t.invoke.apply(this, arguments);
               } finally {
                 (t.data && t.data.isPeriodic) ||
-                  ('number' == typeof n.handleId ? delete i[n.handleId] : n.handleId && (n.handleId[K] = null));
+                  ("number" == typeof n.handleId
+                    ? delete i[n.handleId]
+                    : n.handleId && (n.handleId[K] = null));
               }
             }),
             (n.handleId = o.apply(e, n.args)),
@@ -1497,13 +1765,14 @@
         }
         (o = L(e, (t += r), function(n) {
           return function(o, a) {
-            if ('function' == typeof a[0]) {
+            if ("function" == typeof a[0]) {
               var l = d(
                 t,
                 a[0],
                 {
-                  isPeriodic: 'Interval' === r,
-                  delay: 'Timeout' === r || 'Interval' === r ? a[1] || 0 : void 0,
+                  isPeriodic: "Interval" === r,
+                  delay:
+                    "Timeout" === r || "Interval" === r ? a[1] || 0 : void 0,
                   args: a
                 },
                 s,
@@ -1512,14 +1781,14 @@
               if (!l) return l;
               var u = l.data.handleId;
               return (
-                'number' == typeof u ? (i[u] = l) : u && (u[K] = l),
+                "number" == typeof u ? (i[u] = l) : u && (u[K] = l),
                 u &&
                   u.ref &&
                   u.unref &&
-                  'function' == typeof u.ref &&
-                  'function' == typeof u.unref &&
+                  "function" == typeof u.ref &&
+                  "function" == typeof u.unref &&
                   ((l.ref = u.ref.bind(u)), (l.unref = u.unref.bind(u))),
-                'number' == typeof u || u ? u : l
+                "number" == typeof u || u ? u : l
               );
             }
             return n.apply(e, a);
@@ -1529,19 +1798,21 @@
             return function(n, r) {
               var o,
                 a = r[0];
-              'number' == typeof a ? (o = i[a]) : (o = a && a[K]) || (o = a),
-                o && 'string' == typeof o.type
-                  ? 'notScheduled' !== o.state &&
+              "number" == typeof a ? (o = i[a]) : (o = a && a[K]) || (o = a),
+                o && "string" == typeof o.type
+                  ? "notScheduled" !== o.state &&
                     ((o.cancelFn && o.data.isPeriodic) || 0 === o.runCount) &&
-                    ('number' == typeof a ? delete i[a] : a && (a[K] = null), o.zone.cancelTask(o))
+                    ("number" == typeof a ? delete i[a] : a && (a[K] = null),
+                    o.zone.cancelTask(o))
                   : t.apply(e, r);
             };
           }));
       }
-      var Y = (Object[v('defineProperty')] = Object.defineProperty),
-        Q = (Object[v('getOwnPropertyDescriptor')] = Object.getOwnPropertyDescriptor),
+      var Y = (Object[v("defineProperty")] = Object.defineProperty),
+        Q = (Object[v("getOwnPropertyDescriptor")] =
+          Object.getOwnPropertyDescriptor),
         $ = Object.create,
-        ee = v('unconfigurables');
+        ee = v("unconfigurables");
       function te(e, t) {
         return e && e[ee] && e[ee][t];
       }
@@ -1549,7 +1820,10 @@
         return (
           Object.isFrozen(n) || (n.configurable = !0),
           n.configurable ||
-            (e[ee] || Object.isFrozen(e) || Y(e, ee, { writable: !0, value: {} }), e[ee] && (e[ee][t] = !0)),
+            (e[ee] ||
+              Object.isFrozen(e) ||
+              Y(e, ee, { writable: !0, value: {} }),
+            e[ee] && (e[ee][t] = !0)),
           n
         );
       }
@@ -1582,238 +1856,275 @@
         }
       }
       var oe = [
-          'absolutedeviceorientation',
-          'afterinput',
-          'afterprint',
-          'appinstalled',
-          'beforeinstallprompt',
-          'beforeprint',
-          'beforeunload',
-          'devicelight',
-          'devicemotion',
-          'deviceorientation',
-          'deviceorientationabsolute',
-          'deviceproximity',
-          'hashchange',
-          'languagechange',
-          'message',
-          'mozbeforepaint',
-          'offline',
-          'online',
-          'paint',
-          'pageshow',
-          'pagehide',
-          'popstate',
-          'rejectionhandled',
-          'storage',
-          'unhandledrejection',
-          'unload',
-          'userproximity',
-          'vrdisplyconnected',
-          'vrdisplaydisconnected',
-          'vrdisplaypresentchange'
+          "absolutedeviceorientation",
+          "afterinput",
+          "afterprint",
+          "appinstalled",
+          "beforeinstallprompt",
+          "beforeprint",
+          "beforeunload",
+          "devicelight",
+          "devicemotion",
+          "deviceorientation",
+          "deviceorientationabsolute",
+          "deviceproximity",
+          "hashchange",
+          "languagechange",
+          "message",
+          "mozbeforepaint",
+          "offline",
+          "online",
+          "paint",
+          "pageshow",
+          "pagehide",
+          "popstate",
+          "rejectionhandled",
+          "storage",
+          "unhandledrejection",
+          "unload",
+          "userproximity",
+          "vrdisplyconnected",
+          "vrdisplaydisconnected",
+          "vrdisplaypresentchange"
         ],
-        ae = ['encrypted', 'waitingforkey', 'msneedkey', 'mozinterruptbegin', 'mozinterruptend'],
-        ie = ['load'],
-        se = ['blur', 'error', 'focus', 'load', 'resize', 'scroll', 'messageerror'],
-        ce = ['bounce', 'finish', 'start'],
-        le = ['loadstart', 'progress', 'abort', 'error', 'load', 'progress', 'timeout', 'loadend', 'readystatechange'],
-        ue = ['upgradeneeded', 'complete', 'abort', 'success', 'error', 'blocked', 'versionchange', 'close'],
-        fe = ['close', 'error', 'open', 'message'],
-        pe = ['error', 'message'],
+        ae = [
+          "encrypted",
+          "waitingforkey",
+          "msneedkey",
+          "mozinterruptbegin",
+          "mozinterruptend"
+        ],
+        ie = ["load"],
+        se = [
+          "blur",
+          "error",
+          "focus",
+          "load",
+          "resize",
+          "scroll",
+          "messageerror"
+        ],
+        ce = ["bounce", "finish", "start"],
+        le = [
+          "loadstart",
+          "progress",
+          "abort",
+          "error",
+          "load",
+          "progress",
+          "timeout",
+          "loadend",
+          "readystatechange"
+        ],
+        ue = [
+          "upgradeneeded",
+          "complete",
+          "abort",
+          "success",
+          "error",
+          "blocked",
+          "versionchange",
+          "close"
+        ],
+        fe = ["close", "error", "open", "message"],
+        pe = ["error", "message"],
         he = [
-          'abort',
-          'animationcancel',
-          'animationend',
-          'animationiteration',
-          'auxclick',
-          'beforeinput',
-          'blur',
-          'cancel',
-          'canplay',
-          'canplaythrough',
-          'change',
-          'compositionstart',
-          'compositionupdate',
-          'compositionend',
-          'cuechange',
-          'click',
-          'close',
-          'contextmenu',
-          'curechange',
-          'dblclick',
-          'drag',
-          'dragend',
-          'dragenter',
-          'dragexit',
-          'dragleave',
-          'dragover',
-          'drop',
-          'durationchange',
-          'emptied',
-          'ended',
-          'error',
-          'focus',
-          'focusin',
-          'focusout',
-          'gotpointercapture',
-          'input',
-          'invalid',
-          'keydown',
-          'keypress',
-          'keyup',
-          'load',
-          'loadstart',
-          'loadeddata',
-          'loadedmetadata',
-          'lostpointercapture',
-          'mousedown',
-          'mouseenter',
-          'mouseleave',
-          'mousemove',
-          'mouseout',
-          'mouseover',
-          'mouseup',
-          'mousewheel',
-          'orientationchange',
-          'pause',
-          'play',
-          'playing',
-          'pointercancel',
-          'pointerdown',
-          'pointerenter',
-          'pointerleave',
-          'pointerlockchange',
-          'mozpointerlockchange',
-          'webkitpointerlockerchange',
-          'pointerlockerror',
-          'mozpointerlockerror',
-          'webkitpointerlockerror',
-          'pointermove',
-          'pointout',
-          'pointerover',
-          'pointerup',
-          'progress',
-          'ratechange',
-          'reset',
-          'resize',
-          'scroll',
-          'seeked',
-          'seeking',
-          'select',
-          'selectionchange',
-          'selectstart',
-          'show',
-          'sort',
-          'stalled',
-          'submit',
-          'suspend',
-          'timeupdate',
-          'volumechange',
-          'touchcancel',
-          'touchmove',
-          'touchstart',
-          'touchend',
-          'transitioncancel',
-          'transitionend',
-          'waiting',
-          'wheel'
+          "abort",
+          "animationcancel",
+          "animationend",
+          "animationiteration",
+          "auxclick",
+          "beforeinput",
+          "blur",
+          "cancel",
+          "canplay",
+          "canplaythrough",
+          "change",
+          "compositionstart",
+          "compositionupdate",
+          "compositionend",
+          "cuechange",
+          "click",
+          "close",
+          "contextmenu",
+          "curechange",
+          "dblclick",
+          "drag",
+          "dragend",
+          "dragenter",
+          "dragexit",
+          "dragleave",
+          "dragover",
+          "drop",
+          "durationchange",
+          "emptied",
+          "ended",
+          "error",
+          "focus",
+          "focusin",
+          "focusout",
+          "gotpointercapture",
+          "input",
+          "invalid",
+          "keydown",
+          "keypress",
+          "keyup",
+          "load",
+          "loadstart",
+          "loadeddata",
+          "loadedmetadata",
+          "lostpointercapture",
+          "mousedown",
+          "mouseenter",
+          "mouseleave",
+          "mousemove",
+          "mouseout",
+          "mouseover",
+          "mouseup",
+          "mousewheel",
+          "orientationchange",
+          "pause",
+          "play",
+          "playing",
+          "pointercancel",
+          "pointerdown",
+          "pointerenter",
+          "pointerleave",
+          "pointerlockchange",
+          "mozpointerlockchange",
+          "webkitpointerlockerchange",
+          "pointerlockerror",
+          "mozpointerlockerror",
+          "webkitpointerlockerror",
+          "pointermove",
+          "pointout",
+          "pointerover",
+          "pointerup",
+          "progress",
+          "ratechange",
+          "reset",
+          "resize",
+          "scroll",
+          "seeked",
+          "seeking",
+          "select",
+          "selectionchange",
+          "selectstart",
+          "show",
+          "sort",
+          "stalled",
+          "submit",
+          "suspend",
+          "timeupdate",
+          "volumechange",
+          "touchcancel",
+          "touchmove",
+          "touchstart",
+          "touchend",
+          "transitioncancel",
+          "transitionend",
+          "waiting",
+          "wheel"
         ].concat(
-          ['webglcontextrestored', 'webglcontextlost', 'webglcontextcreationerror'],
-          ['autocomplete', 'autocompleteerror'],
-          ['toggle'],
           [
-            'afterscriptexecute',
-            'beforescriptexecute',
-            'DOMContentLoaded',
-            'freeze',
-            'fullscreenchange',
-            'mozfullscreenchange',
-            'webkitfullscreenchange',
-            'msfullscreenchange',
-            'fullscreenerror',
-            'mozfullscreenerror',
-            'webkitfullscreenerror',
-            'msfullscreenerror',
-            'readystatechange',
-            'visibilitychange',
-            'resume'
+            "webglcontextrestored",
+            "webglcontextlost",
+            "webglcontextcreationerror"
+          ],
+          ["autocomplete", "autocompleteerror"],
+          ["toggle"],
+          [
+            "afterscriptexecute",
+            "beforescriptexecute",
+            "DOMContentLoaded",
+            "freeze",
+            "fullscreenchange",
+            "mozfullscreenchange",
+            "webkitfullscreenchange",
+            "msfullscreenchange",
+            "fullscreenerror",
+            "mozfullscreenerror",
+            "webkitfullscreenerror",
+            "msfullscreenerror",
+            "readystatechange",
+            "visibilitychange",
+            "resume"
           ],
           oe,
           [
-            'beforecopy',
-            'beforecut',
-            'beforepaste',
-            'copy',
-            'cut',
-            'paste',
-            'dragstart',
-            'loadend',
-            'animationstart',
-            'search',
-            'transitionrun',
-            'transitionstart',
-            'webkitanimationend',
-            'webkitanimationiteration',
-            'webkitanimationstart',
-            'webkittransitionend'
+            "beforecopy",
+            "beforecut",
+            "beforepaste",
+            "copy",
+            "cut",
+            "paste",
+            "dragstart",
+            "loadend",
+            "animationstart",
+            "search",
+            "transitionrun",
+            "transitionstart",
+            "webkitanimationend",
+            "webkitanimationiteration",
+            "webkitanimationstart",
+            "webkittransitionend"
           ],
           [
-            'activate',
-            'afterupdate',
-            'ariarequest',
-            'beforeactivate',
-            'beforedeactivate',
-            'beforeeditfocus',
-            'beforeupdate',
-            'cellchange',
-            'controlselect',
-            'dataavailable',
-            'datasetchanged',
-            'datasetcomplete',
-            'errorupdate',
-            'filterchange',
-            'layoutcomplete',
-            'losecapture',
-            'move',
-            'moveend',
-            'movestart',
-            'propertychange',
-            'resizeend',
-            'resizestart',
-            'rowenter',
-            'rowexit',
-            'rowsdelete',
-            'rowsinserted',
-            'command',
-            'compassneedscalibration',
-            'deactivate',
-            'help',
-            'mscontentzoom',
-            'msmanipulationstatechanged',
-            'msgesturechange',
-            'msgesturedoubletap',
-            'msgestureend',
-            'msgesturehold',
-            'msgesturestart',
-            'msgesturetap',
-            'msgotpointercapture',
-            'msinertiastart',
-            'mslostpointercapture',
-            'mspointercancel',
-            'mspointerdown',
-            'mspointerenter',
-            'mspointerhover',
-            'mspointerleave',
-            'mspointermove',
-            'mspointerout',
-            'mspointerover',
-            'mspointerup',
-            'pointerout',
-            'mssitemodejumplistitemremoved',
-            'msthumbnailclick',
-            'stop',
-            'storagecommit'
+            "activate",
+            "afterupdate",
+            "ariarequest",
+            "beforeactivate",
+            "beforedeactivate",
+            "beforeeditfocus",
+            "beforeupdate",
+            "cellchange",
+            "controlselect",
+            "dataavailable",
+            "datasetchanged",
+            "datasetcomplete",
+            "errorupdate",
+            "filterchange",
+            "layoutcomplete",
+            "losecapture",
+            "move",
+            "moveend",
+            "movestart",
+            "propertychange",
+            "resizeend",
+            "resizestart",
+            "rowenter",
+            "rowexit",
+            "rowsdelete",
+            "rowsinserted",
+            "command",
+            "compassneedscalibration",
+            "deactivate",
+            "help",
+            "mscontentzoom",
+            "msmanipulationstatechanged",
+            "msgesturechange",
+            "msgesturedoubletap",
+            "msgestureend",
+            "msgesturehold",
+            "msgesturestart",
+            "msgesturetap",
+            "msgotpointercapture",
+            "msinertiastart",
+            "mslostpointercapture",
+            "mspointercancel",
+            "mspointerdown",
+            "mspointerenter",
+            "mspointerhover",
+            "mspointerleave",
+            "mspointermove",
+            "mspointerout",
+            "mspointerover",
+            "mspointerup",
+            "pointerout",
+            "mssitemodejumplistitemremoved",
+            "msthumbnailclick",
+            "stop",
+            "storagecommit"
           ]
         );
       function de(e, t, n, r) {
@@ -1836,17 +2147,21 @@
       }
       function ve(e, c) {
         if (!E || D) {
-          var l = 'undefined' != typeof WebSocket;
+          var l = "undefined" != typeof WebSocket;
           if (
             (function() {
-              if ((S || D) && !t(HTMLElement.prototype, 'onclick') && 'undefined' != typeof Element) {
-                var e = t(Element.prototype, 'onclick');
+              if (
+                (S || D) &&
+                !t(HTMLElement.prototype, "onclick") &&
+                "undefined" != typeof Element
+              ) {
+                var e = t(Element.prototype, "onclick");
                 if (e && !e.configurable) return !1;
               }
               var r = XMLHttpRequest.prototype,
-                o = t(r, 'onreadystatechange');
+                o = t(r, "onreadystatechange");
               if (o) {
-                n(r, 'onreadystatechange', {
+                n(r, "onreadystatechange", {
                   enumerable: !0,
                   configurable: !0,
                   get: function() {
@@ -1854,10 +2169,10 @@
                   }
                 });
                 var a = !!(s = new XMLHttpRequest()).onreadystatechange;
-                return n(r, 'onreadystatechange', o || {}), a;
+                return n(r, "onreadystatechange", o || {}), a;
               }
-              var i = v('fake');
-              n(r, 'onreadystatechange', {
+              var i = v("fake");
+              n(r, "onreadystatechange", {
                 enumerable: !0,
                 configurable: !0,
                 get: function() {
@@ -1870,15 +2185,18 @@
               var s,
                 c = function() {};
               return (
-                ((s = new XMLHttpRequest()).onreadystatechange = c), (a = s[i] === c), (s.onreadystatechange = null), a
+                ((s = new XMLHttpRequest()).onreadystatechange = c),
+                (a = s[i] === c),
+                (s.onreadystatechange = null),
+                a
               );
             })()
           ) {
             var u = c.__Zone_ignore_on_properties;
             if (S) {
               var f = window,
-                p = R ? [{ target: f, ignoreProperties: ['error'] }] : [];
-              de(f, he.concat(['messageerror']), u ? u.concat(p) : u, r(f)),
+                p = R ? [{ target: f, ignoreProperties: ["error"] }] : [];
+              de(f, he.concat(["messageerror"]), u ? u.concat(p) : u, r(f)),
                 de(Document.prototype, he, u),
                 void 0 !== f.SVGElement && de(f.SVGElement.prototype, he, u),
                 de(Element.prototype, he, u),
@@ -1896,7 +2214,7 @@
             de(XMLHttpRequest.prototype, le, u);
             var y = c.XMLHttpRequestEventTarget;
             y && de(y && y.prototype, le, u),
-              'undefined' != typeof IDBIndex &&
+              "undefined" != typeof IDBIndex &&
                 (de(IDBIndex.prototype, ue, u),
                 de(IDBRequest.prototype, ue, u),
                 de(IDBOpenDBRequest.prototype, ue, u),
@@ -1909,15 +2227,22 @@
               for (
                 var e = function(e) {
                     var t = he[e],
-                      n = 'on' + t;
+                      n = "on" + t;
                     self.addEventListener(
                       t,
                       function(e) {
                         var t,
                           r,
                           o = e.target;
-                        for (r = o ? o.constructor.name + '.' + n : 'unknown.' + n; o; )
-                          o[n] && !o[n][ge] && (((t = h(o[n], r))[ge] = o[n]), (o[n] = t)), (o = o.parentElement);
+                        for (
+                          r = o ? o.constructor.name + "." + n : "unknown." + n;
+                          o;
+
+                        )
+                          o[n] &&
+                            !o[n][ge] &&
+                            (((t = h(o[n], r))[ge] = o[n]), (o[n] = t)),
+                            (o = o.parentElement);
                       },
                       !0
                     );
@@ -1928,7 +2253,7 @@
               )
                 e(t);
             })(),
-              j('XMLHttpRequest'),
+              j("XMLHttpRequest"),
               l &&
                 (function(e, n) {
                   var r = n.WebSocket;
@@ -1937,18 +2262,18 @@
                       var c,
                         l,
                         u = arguments.length > 1 ? new r(e, n) : new r(e),
-                        f = t(u, 'onmessage');
+                        f = t(u, "onmessage");
                       return (
                         f && !1 === f.configurable
                           ? ((c = o(u)),
                             (l = u),
-                            [i, s, 'send', 'close'].forEach(function(e) {
+                            [i, s, "send", "close"].forEach(function(e) {
                               c[e] = function() {
                                 var t = a.call(arguments);
                                 if (e === i || e === s) {
                                   var n = t.length > 0 ? t[0] : void 0;
                                   if (n) {
-                                    var r = Zone.__symbol__('ON_PROPERTY' + n);
+                                    var r = Zone.__symbol__("ON_PROPERTY" + n);
                                     u[r] = c[r];
                                   }
                                 }
@@ -1956,7 +2281,7 @@
                               };
                             }))
                           : (c = u),
-                        z(c, ['close', 'error', 'message', 'open'], l),
+                        z(c, ["close", "error", "message", "open"], l),
                         c
                       );
                     });
@@ -1965,7 +2290,7 @@
                 })(0, c);
         }
       }
-      var ge = v('unbound');
+      var ge = v("unbound");
       function ye(e, n, r, o) {
         var a = Zone.__symbol__(r);
         if (!e[a]) {
@@ -1979,7 +2304,7 @@
                     a,
                     i,
                     c,
-                    l = n + '.' + r + '::' + e,
+                    l = n + "." + r + "::" + e,
                     u = s.prototype;
                   if (u.hasOwnProperty(e)) {
                     var f = t(u, e);
@@ -1996,63 +2321,70 @@
             I(e[r], i);
         }
       }
-      Zone.__load_patch('util', function(e, t, n) {
+      Zone.__load_patch("util", function(e, t, n) {
         (n.patchOnProperties = z), (n.patchMethod = L), (n.bindArguments = b);
       }),
-        Zone.__load_patch('timers', function(e) {
-          J(e, 'set', 'clear', 'Timeout'), J(e, 'set', 'clear', 'Interval'), J(e, 'set', 'clear', 'Immediate');
+        Zone.__load_patch("timers", function(e) {
+          J(e, "set", "clear", "Timeout"),
+            J(e, "set", "clear", "Interval"),
+            J(e, "set", "clear", "Immediate");
         }),
-        Zone.__load_patch('requestAnimationFrame', function(e) {
-          J(e, 'request', 'cancel', 'AnimationFrame'),
-            J(e, 'mozRequest', 'mozCancel', 'AnimationFrame'),
-            J(e, 'webkitRequest', 'webkitCancel', 'AnimationFrame');
+        Zone.__load_patch("requestAnimationFrame", function(e) {
+          J(e, "request", "cancel", "AnimationFrame"),
+            J(e, "mozRequest", "mozCancel", "AnimationFrame"),
+            J(e, "webkitRequest", "webkitCancel", "AnimationFrame");
         }),
-        Zone.__load_patch('blocking', function(e, t) {
-          for (var n = ['alert', 'prompt', 'confirm'], r = 0; r < n.length; r++)
+        Zone.__load_patch("blocking", function(e, t) {
+          for (var n = ["alert", "prompt", "confirm"], r = 0; r < n.length; r++)
             L(e, n[r], function(n, r, o) {
               return function(r, a) {
                 return t.current.run(n, e, a, o);
               };
             });
         }),
-        Zone.__load_patch('EventTarget', function(e, t, n) {
-          var r = t.__symbol__('BLACK_LISTED_EVENTS');
+        Zone.__load_patch("EventTarget", function(e, t, n) {
+          var r = t.__symbol__("BLACK_LISTED_EVENTS");
           e[r] && (t[r] = e[r]),
             (function(e, t) {
               !(function(e, t) {
                 var n = e.Event;
                 n &&
                   n.prototype &&
-                  t.patchMethod(n.prototype, 'stopImmediatePropagation', function(e) {
-                    return function(t, n) {
-                      (t[X] = !0), e && e.apply(t, n);
-                    };
-                  });
+                  t.patchMethod(
+                    n.prototype,
+                    "stopImmediatePropagation",
+                    function(e) {
+                      return function(t, n) {
+                        (t[X] = !0), e && e.apply(t, n);
+                      };
+                    }
+                  );
               })(e, t);
             })(e, n),
             (function(e, t) {
               var n =
-                  'Anchor,Area,Audio,BR,Base,BaseFont,Body,Button,Canvas,Content,DList,Directory,Div,Embed,FieldSet,Font,Form,Frame,FrameSet,HR,Head,Heading,Html,IFrame,Image,Input,Keygen,LI,Label,Legend,Link,Map,Marquee,Media,Menu,Meta,Meter,Mod,OList,Object,OptGroup,Option,Output,Paragraph,Pre,Progress,Quote,Script,Select,Source,Span,Style,TableCaption,TableCell,TableCol,Table,TableRow,TableSection,TextArea,Title,Track,UList,Unknown,Video',
-                r = 'ApplicationCache,EventSource,FileReader,InputMethodContext,MediaController,MessagePort,Node,Performance,SVGElementInstance,SharedWorker,TextTrack,TextTrackCue,TextTrackList,WebKitNamedFlow,Window,Worker,WorkerGlobalScope,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload,IDBRequest,IDBOpenDBRequest,IDBDatabase,IDBTransaction,IDBCursor,DBIndex,WebSocket'.split(
-                  ','
+                  "Anchor,Area,Audio,BR,Base,BaseFont,Body,Button,Canvas,Content,DList,Directory,Div,Embed,FieldSet,Font,Form,Frame,FrameSet,HR,Head,Heading,Html,IFrame,Image,Input,Keygen,LI,Label,Legend,Link,Map,Marquee,Media,Menu,Meta,Meter,Mod,OList,Object,OptGroup,Option,Output,Paragraph,Pre,Progress,Quote,Script,Select,Source,Span,Style,TableCaption,TableCell,TableCol,Table,TableRow,TableSection,TextArea,Title,Track,UList,Unknown,Video",
+                r = "ApplicationCache,EventSource,FileReader,InputMethodContext,MediaController,MessagePort,Node,Performance,SVGElementInstance,SharedWorker,TextTrack,TextTrackCue,TextTrackList,WebKitNamedFlow,Window,Worker,WorkerGlobalScope,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload,IDBRequest,IDBOpenDBRequest,IDBDatabase,IDBTransaction,IDBCursor,DBIndex,WebSocket".split(
+                  ","
                 ),
                 o = [],
                 a = e.wtf,
-                i = n.split(',');
+                i = n.split(",");
               a
                 ? (o = i
                     .map(function(e) {
-                      return 'HTML' + e + 'Element';
+                      return "HTML" + e + "Element";
                     })
                     .concat(r))
                 : e.EventTarget
-                ? o.push('EventTarget')
+                ? o.push("EventTarget")
                 : (o = r);
               for (
                 var s = e.__Zone_disable_IE_check || !1,
                   c = e.__Zone_enable_cross_context_check || !1,
                   l = F(),
-                  h = 'function __BROWSERTOOLS_CONSOLE_SAFEFUNC() { [native code] }',
+                  h =
+                    "function __BROWSERTOOLS_CONSOLE_SAFEFUNC() { [native code] }",
                   d = 0;
                 d < he.length;
                 d++
@@ -2064,7 +2396,7 @@
               for (d = 0; d < n.length; d++)
                 for (var y = i[d], m = (W[y] = {}), k = 0; k < he.length; k++) {
                   var _;
-                  m[(_ = he[k])] = y + '.addEventListener:' + _;
+                  m[(_ = he[k])] = y + ".addEventListener:" + _;
                 }
               var b = [];
               for (d = 0; d < o.length; d++) {
@@ -2077,11 +2409,19 @@
                     if (c)
                       try {
                         var o;
-                        if ('[object FunctionWrapper]' === (o = t.toString()) || o == h) return e.apply(n, r), !1;
+                        if (
+                          "[object FunctionWrapper]" === (o = t.toString()) ||
+                          o == h
+                        )
+                          return e.apply(n, r), !1;
                       } catch (a) {
                         return e.apply(n, r), !1;
                       }
-                    else if ('[object FunctionWrapper]' === (o = t.toString()) || o == h) return e.apply(n, r), !1;
+                    else if (
+                      "[object FunctionWrapper]" === (o = t.toString()) ||
+                      o == h
+                    )
+                      return e.apply(n, r), !1;
                   } else if (c)
                     try {
                       t.toString();
@@ -2095,17 +2435,20 @@
             })(e, n);
           var o = e.XMLHttpRequestEventTarget;
           o && o.prototype && n.patchEventTarget(e, [o.prototype]),
-            j('MutationObserver'),
-            j('WebKitMutationObserver'),
-            j('IntersectionObserver'),
-            j('FileReader');
+            j("MutationObserver"),
+            j("WebKitMutationObserver"),
+            j("IntersectionObserver"),
+            j("FileReader");
         }),
-        Zone.__load_patch('on_property', function(e, t, n) {
+        Zone.__load_patch("on_property", function(e, t, n) {
           ve(0, e),
             (Object.defineProperty = function(e, t, n) {
-              if (te(e, t)) throw new TypeError("Cannot assign to read only property '" + t + "' of " + e);
+              if (te(e, t))
+                throw new TypeError(
+                  "Cannot assign to read only property '" + t + "' of " + e
+                );
               var r = n.configurable;
-              return 'prototype' !== t && (n = ne(e, t, n)), re(e, t, n, r);
+              return "prototype" !== t && (n = ne(e, t, n)), re(e, t, n, r);
             }),
             (Object.defineProperties = function(e, t) {
               return (
@@ -2117,7 +2460,7 @@
             }),
             (Object.create = function(e, t) {
               return (
-                'object' != typeof t ||
+                "object" != typeof t ||
                   Object.isFrozen(t) ||
                   Object.keys(t).forEach(function(n) {
                     t[n] = ne(e, n, t[n]);
@@ -2130,25 +2473,25 @@
               return n && te(e, t) && (n.configurable = !1), n;
             });
         }),
-        Zone.__load_patch('customElements', function(e, t, n) {
+        Zone.__load_patch("customElements", function(e, t, n) {
           (S || D) &&
-            'registerElement' in e.document &&
-            ye(document, 'Document', 'registerElement', [
-              'createdCallback',
-              'attachedCallback',
-              'detachedCallback',
-              'attributeChangedCallback'
+            "registerElement" in e.document &&
+            ye(document, "Document", "registerElement", [
+              "createdCallback",
+              "attachedCallback",
+              "detachedCallback",
+              "attributeChangedCallback"
             ]),
             (S || D) &&
-              'customElements' in e &&
-              ye(e.customElements, 'customElements', 'define', [
-                'connectedCallback',
-                'disconnectedCallback',
-                'adoptedCallback',
-                'attributeChangedCallback'
+              "customElements" in e &&
+              ye(e.customElements, "customElements", "define", [
+                "connectedCallback",
+                "disconnectedCallback",
+                "adoptedCallback",
+                "attributeChangedCallback"
               ]);
         }),
-        Zone.__load_patch('canvas', function(e) {
+        Zone.__load_patch("canvas", function(e) {
           var t = e.HTMLCanvasElement;
           void 0 !== t &&
             t.prototype &&
@@ -2165,17 +2508,24 @@
                   e
                 );
               }
-              o = L(t.prototype, 'toBlob', function(e) {
+              o = L(t.prototype, "toBlob", function(e) {
                 return function(t, n) {
                   var r = (function(e, t) {
-                    return { name: 'HTMLCanvasElement.toBlob', target: e, cbIdx: 0, args: t };
+                    return {
+                      name: "HTMLCanvasElement.toBlob",
+                      target: e,
+                      cbIdx: 0,
+                      args: t
+                    };
                   })(t, n);
-                  return r.cbIdx >= 0 && 'function' == typeof n[r.cbIdx] ? d(r.name, n[r.cbIdx], r, a) : e.apply(t, n);
+                  return r.cbIdx >= 0 && "function" == typeof n[r.cbIdx]
+                    ? d(r.name, n[r.cbIdx], r, a)
+                    : e.apply(t, n);
                 };
               });
             })();
         }),
-        Zone.__load_patch('XHR', function(e, t) {
+        Zone.__load_patch("XHR", function(e, t) {
           !(function(u) {
             var f = XMLHttpRequest.prototype,
               p = f[c],
@@ -2187,8 +2537,8 @@
                 (p = y[c]), (h = y[l]);
               }
             }
-            var m = 'readystatechange',
-              k = 'scheduled';
+            var m = "readystatechange",
+              k = "scheduled";
             function _(e) {
               var t = e.data,
                 r = t.target;
@@ -2202,54 +2552,72 @@
                     if (n && n.length > 0) {
                       var o = e.invoke;
                       (e.invoke = function() {
-                        for (var n = r.__zone_symbol__loadfalse, a = 0; a < n.length; a++) n[a] === e && n.splice(a, 1);
+                        for (
+                          var n = r.__zone_symbol__loadfalse, a = 0;
+                          a < n.length;
+                          a++
+                        )
+                          n[a] === e && n.splice(a, 1);
                         t.aborted || e.state !== k || o.call(e);
                       }),
                         n.push(e);
                     } else e.invoke();
                   } else t.aborted || !1 !== r[a] || (r[s] = !0);
               });
-              return p.call(r, m, u), r[n] || (r[n] = e), D.apply(r, t.args), (r[a] = !0), e;
+              return (
+                p.call(r, m, u),
+                r[n] || (r[n] = e),
+                D.apply(r, t.args),
+                (r[a] = !0),
+                e
+              );
             }
             function b() {}
             function T(e) {
               var t = e.data;
               return (t.aborted = !0), O.apply(t.target, t.args);
             }
-            var w = L(f, 'open', function() {
+            var w = L(f, "open", function() {
                 return function(e, t) {
                   return (e[r] = 0 == t[2]), (e[i] = t[1]), w.apply(e, t);
                 };
               }),
-              E = v('fetchTaskAborting'),
-              S = v('fetchTaskScheduling'),
-              D = L(f, 'send', function() {
+              E = v("fetchTaskAborting"),
+              S = v("fetchTaskScheduling"),
+              D = L(f, "send", function() {
                 return function(e, n) {
                   if (!0 === t.current[S]) return D.apply(e, n);
                   if (e[r]) return D.apply(e, n);
-                  var o = { target: e, url: e[i], isPeriodic: !1, args: n, aborted: !1 },
-                    a = d('XMLHttpRequest.send', b, o, _, T);
+                  var o = {
+                      target: e,
+                      url: e[i],
+                      isPeriodic: !1,
+                      args: n,
+                      aborted: !1
+                    },
+                    a = d("XMLHttpRequest.send", b, o, _, T);
                   e && !0 === e[s] && !o.aborted && a.state === k && a.invoke();
                 };
               }),
-              O = L(f, 'abort', function() {
+              O = L(f, "abort", function() {
                 return function(e, r) {
                   var o = e[n];
-                  if (o && 'string' == typeof o.type) {
-                    if (null == o.cancelFn || (o.data && o.data.aborted)) return;
+                  if (o && "string" == typeof o.type) {
+                    if (null == o.cancelFn || (o.data && o.data.aborted))
+                      return;
                     o.zone.cancelTask(o);
                   } else if (!0 === t.current[E]) return O.apply(e, r);
                 };
               });
           })();
-          var n = v('xhrTask'),
-            r = v('xhrSync'),
-            o = v('xhrListener'),
-            a = v('xhrScheduled'),
-            i = v('xhrURL'),
-            s = v('xhrErrorBeforeScheduled');
+          var n = v("xhrTask"),
+            r = v("xhrSync"),
+            o = v("xhrListener"),
+            a = v("xhrScheduled"),
+            i = v("xhrURL"),
+            s = v("xhrErrorBeforeScheduled");
         }),
-        Zone.__load_patch('geolocation', function(e) {
+        Zone.__load_patch("geolocation", function(e) {
           e.navigator &&
             e.navigator.geolocation &&
             (function(e, n) {
@@ -2259,10 +2627,10 @@
                     var a = n[o],
                       i = e[a];
                     if (i) {
-                      if (!T(t(e, a))) return 'continue';
+                      if (!T(t(e, a))) return "continue";
                       e[a] = (function(e) {
                         var t = function() {
-                          return e.apply(this, b(arguments, r + '.' + a));
+                          return e.apply(this, b(arguments, r + "." + a));
                         };
                         return I(t, e), t;
                       })(i);
@@ -2273,9 +2641,12 @@
                 a++
               )
                 o(a);
-            })(e.navigator.geolocation, ['getCurrentPosition', 'watchPosition']);
+            })(e.navigator.geolocation, [
+              "getCurrentPosition",
+              "watchPosition"
+            ]);
         }),
-        Zone.__load_patch('PromiseRejectionEvent', function(e, t) {
+        Zone.__load_patch("PromiseRejectionEvent", function(e, t) {
           function n(t) {
             return function(n) {
               V(e, t).forEach(function(r) {
@@ -2288,21 +2659,23 @@
             };
           }
           e.PromiseRejectionEvent &&
-            ((t[v('unhandledPromiseRejectionHandler')] = n('unhandledrejection')),
-            (t[v('rejectionHandledHandler')] = n('rejectionhandled')));
+            ((t[v("unhandledPromiseRejectionHandler")] = n(
+              "unhandledrejection"
+            )),
+            (t[v("rejectionHandledHandler")] = n("rejectionhandled")));
         });
     })();
   },
   2: function(e, t, n) {
-    e.exports = n('hN/g');
+    e.exports = n("hN/g");
   },
-  'hN/g': function(e, t, n) {
-    'use strict';
-    n.r(t), n('0TWp'), n('vU8d');
+  "hN/g": function(e, t, n) {
+    "use strict";
+    n.r(t), n("0TWp"), n("vU8d");
   },
   vU8d: function(e, t) {
     !(function() {
-      'use strict';
+      "use strict";
       !(function() {
         if (
           void 0 === window.Reflect ||

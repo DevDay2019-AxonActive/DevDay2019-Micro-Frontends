@@ -1,9 +1,9 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule, Injector } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, Injector } from '@angular/core';
 
-import { createCustomElement } from "@angular/elements";
+import { createCustomElement } from '@angular/elements';
 
-import { GreetComponent } from "./greet/greet.component";
+import { GreetComponent } from './greet/greet.component';
 
 @NgModule({
   declarations: [GreetComponent],
@@ -14,7 +14,7 @@ import { GreetComponent } from "./greet/greet.component";
 export class AppModule {
   constructor(injector: Injector) {
     const el = createCustomElement(GreetComponent, { injector });
-    customElements.define("app-greet", el);
+    customElements.define('app-greet', el);
   }
 
   ngDoBootstap() {}

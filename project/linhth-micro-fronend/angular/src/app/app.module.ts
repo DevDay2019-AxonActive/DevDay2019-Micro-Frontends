@@ -3,18 +3,18 @@ import { NgModule, Injector } from '@angular/core';
 
 import { createCustomElement } from '@angular/elements';
 
-import { GreetComponent } from './greet/greet.component';
+import { BookSummaryTileComponent } from './book-summary-tile/book-summary-tile.component';
 
 @NgModule({
-  declarations: [GreetComponent],
+  declarations: [BookSummaryTileComponent],
   imports: [BrowserModule],
   providers: [],
-  entryComponents: [GreetComponent] // This we have to do for all dynamic components
+  entryComponents: [BookSummaryTileComponent] // This we have to do for all dynamic components
 })
 export class AppModule {
   constructor(injector: Injector) {
-    const el = createCustomElement(GreetComponent, { injector });
-    customElements.define('app-greet', el);
+    const el = createCustomElement(BookSummaryTileComponent, { injector });
+    customElements.define(BookSummaryTileComponent.SELECTOR, el);
   }
 
   ngDoBootstap() {}

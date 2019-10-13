@@ -1,5 +1,5 @@
 {
-  "name": "micro-frontend",
+  "name": "book-summary-list",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

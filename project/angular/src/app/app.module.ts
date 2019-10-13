@@ -12,10 +12,10 @@ import { BookSummaryTileComponent } from './book-summary-tile/book-summary-tile.
   entryComponents: [BookSummaryTileComponent] // This we have to do for all dynamic components
 })
 export class AppModule {
-  constructor(injector: Injector) {
-    const el = createCustomElement(BookSummaryTileComponent, { injector });
-    customElements.define(BookSummaryTileComponent.SELECTOR, el);
-  }
+  constructor(private injector: Injector) {}
 
-  ngDoBootstap() {}
+  ngDoBootstrap() {
+    const element = createCustomElement(BookSummaryTileComponent, { injector: this.injector });
+    customElements.define(BookSummaryTileComponent.SELECTOR, element);
+  }
 }

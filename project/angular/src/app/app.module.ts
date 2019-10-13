@@ -5,6 +5,8 @@ import { createCustomElement } from '@angular/elements';
 
 import { BookSummaryTileComponent } from './book-summary-tile/book-summary-tile.component';
 
+import 'bootstrap';
+
 @NgModule({
   declarations: [BookSummaryTileComponent],
   imports: [BrowserModule],

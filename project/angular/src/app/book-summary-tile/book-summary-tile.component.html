@@ -1,3 +1,27 @@
-<div>Hello + {{ name }}</div>
-
-ZOZOZO
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-2 thumbnail">
+      <img
+        src="https://salt.tikicdn.com/cache/w1200/ts/product/af/a1/4b/92477ec9b6688060b2b5d2022a60d3e6.jpg"
+        class="img-fluid"
+        alt="Responsive image"
+      />
+    </div>
+    <div class="col summary">
+      <h1>
+        <strong>{{ title }}</strong>
+      </h1>
+      <blockquote class="blockquote">
+        <p class="mb-0 text-muted">Một câu chuyện giản dị, chứa đầy bất ngờ cho tới trang cuối cùng</p>
+        <footer class="blockquote-footer"><strong>Nguyễn Nhật Ánh</strong></footer>
+      </blockquote>
+      <div class="footer">
+        <span class="rating text-warning">
+          <i class="fa fa-star" *ngFor="let r of [].constructor(rating)"></i>
+        </span>
+        <strong>Bình luận (<i class="text-muted">35</i>)</strong>
+        <strong>Nguồn: Tiki</strong>
+      </div>
+    </div>
+  </div>
+</div>

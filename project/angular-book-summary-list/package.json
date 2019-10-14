@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "public": "npm run build && http-server ./dist -p 8081",
+    "publish": "npm run build && http-server ./dist -p 8081",
     "build": "ng build --prod --output-hashing none --single-bundle true --outputPath=dist",
     "test": "ng test",
     "lint": "ng lint",

@@ -1,0 +1,38 @@
+/* Fix some bootstrap styles not working properly */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+/* end */
+
+.container {
+  min-height: 200px;
+}
+
+.thumbnail {
+  padding-right: 0;
+}
+
+.summary {
+  padding-left: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.summary blockquote.blockquote {
+  margin-bottom: 0;
+}
+
+.summary .rating {
+  font-size: 20px;
+}
+
+.summary .footer > * {
+  margin-right: 10px;
+}

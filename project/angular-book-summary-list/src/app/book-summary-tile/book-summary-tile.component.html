@@ -3,7 +3,7 @@
     <div class="col col-sm-2 thumbnail">
       <img src="{{ thumbnailUrl }}" class="img-fluid" alt="Book thumbnail" />
     </div>
-    <div class="col summary">
+    <div class="col summary d-flex flex-column">
       <h1>
         <strong>{{ title }}</strong>
       </h1>
@@ -13,9 +13,11 @@
           <strong>{{ author }}</strong>
         </footer>
       </blockquote>
-      <div class="footer">
+      <div class="footer mt-auto">
         <span class="rating text-warning">
-          <i class="fa fa-star" *ngFor="let r of [].constructor(rating)"></i>
+          <i class="fa fa-star" *ngFor="let r of [].constructor(math.floor(rating))"></i>
+          <i class="fa fa-star-half-o" *ngIf="rating % 1 > 0"></i>
+          <i class="fa fa-star-o" *ngFor="let r of [].constructor(math.floor(5 - rating))"></i>
         </span>
         <strong
           >Bình luận (<i class="text-muted">{{ commentNumber }}</i

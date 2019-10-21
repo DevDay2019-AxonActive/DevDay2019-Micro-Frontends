@@ -12,10 +12,6 @@
 .summary {
   padding-left: 0;
 
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
   blockquote.blockquote {
     margin-bottom: 0;
   }
@@ -26,5 +22,15 @@
 
   .footer > * {
     margin-right: 10px;
+  }
+
+  .block-with-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: 1.2; /* fallback */
+    max-height: 2.4;
   }
 }

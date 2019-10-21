@@ -12,6 +12,8 @@ export class BookSummaryTileComponent implements OnInit {
   @Input()
   title: string;
 
+  math = Math;
+
   @Input()
   thumbnailUrl: string;
 

@@ -14,6 +14,7 @@ export class BookSummaryTileComponent implements OnInit {
 
   math = Math;
 
+  @Input()
   thumbnailUrl: string;
 
   @Input()

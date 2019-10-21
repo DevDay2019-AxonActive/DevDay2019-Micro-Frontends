@@ -10,12 +10,26 @@ export class BookSummaryTileComponent implements OnInit {
   static SELECTOR = 'book-summary-tile';
 
   @Input()
-  title = 'Làm bạn với bầu trời';
-
-  @Input()
-  rating = 3.5;
+  title: string;
 
   math = Math;
+
+  thumbnailUrl: string;
+
+  @Input()
+  summary: string;
+
+  @Input()
+  author: string;
+
+  @Input()
+  commentNumber: number;
+
+  @Input()
+  rating: number;
+
+  @Input()
+  sourceName: string;
 
   constructor() {}
 

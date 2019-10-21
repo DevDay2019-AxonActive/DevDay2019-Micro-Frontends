@@ -23,4 +23,14 @@
   .footer > * {
     margin-right: 10px;
   }
+
+  .block-with-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: 1.2; /* fallback */
+    max-height: 2.4;
+  }
 }

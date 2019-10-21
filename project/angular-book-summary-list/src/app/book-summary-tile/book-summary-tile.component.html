@@ -12,12 +12,18 @@
         <strong>{{ title }}</strong>
       </h1>
       <blockquote class="blockquote">
-        <p class="mb-0 text-muted block-with-text">Một câu chuyện giản dị, chứa đầy bất ngờ cho tới trang cuối cùng</p>
+        <p class="mb-0 text-muted block-with-text">
+          Một câu chuyện giản dị, chứa đầy bất ngờ cho tới trang cuối cùng Một câu chuyện giản dị, chứa đầy bất ngờ cho
+          tới trang cuối cùng Một câu chuyện giản dị, chứa đầy bất ngờ cho tới trang cuối cùng Một câu chuyện giản dị,
+          chứa đầy bất ngờ cho tới trang cuối cùng
+        </p>
         <footer class="blockquote-footer"><strong>Nguyễn Nhật Ánh</strong></footer>
       </blockquote>
       <div class="footer mt-auto">
         <span class="rating text-warning">
-          <i class="fa fa-star" *ngFor="let r of [].constructor(rating)"></i>
+          <i class="fa fa-star" *ngFor="let r of [].constructor(math.floor(rating))"></i>
+          <i class="fa fa-star-half-o" *ngIf="rating % 1 > 0"></i>
+          <i class="fa fa-star-o" *ngFor="let r of [].constructor(math.floor(5 - rating))"></i>
         </span>
         <strong>Bình luận (<i class="text-muted">35</i>)</strong>
         <strong>Nguồn: Tiki</strong>

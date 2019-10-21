@@ -13,7 +13,9 @@ export class BookSummaryTileComponent implements OnInit {
   title = 'Làm bạn với bầu trời';
 
   @Input()
-  rating = 5;
+  rating = 3.5;
+
+  math = Math;
 
   constructor() {}
 

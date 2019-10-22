@@ -42,7 +42,7 @@ const App = props => {
                 alt="Book Thumbnail"
               />
             </div>
-            <div className="col summary">
+            <div className="col summary d-flex flex-column">
               <h1>
                 <strong>{props.title}</strong>
               </h1>
@@ -52,7 +52,7 @@ const App = props => {
                   <strong>{props.author}</strong>
                 </footer>
               </blockquote>
-              <div className="footer">
+              <div className="footer mt-auto">
                 <span className="rating text-warning">
                   {renderFullRatingStars}
                   {renderHalfRatingStar}

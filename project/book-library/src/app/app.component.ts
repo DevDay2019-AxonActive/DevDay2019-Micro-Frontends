@@ -16,7 +16,7 @@ export class AppComponent {
 
   commentNumber = 35;
 
-  rating = 5;
+  rating = 3.5;
 
   sourceName = 'Tiki';
 }

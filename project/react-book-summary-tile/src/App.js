@@ -18,6 +18,17 @@ const App = props => {
     .concat(fontawesome.toString())
     .concat(bootstrap.toString());
 
+  const renderFullRatingStars = [...Array(Math.floor(props.rating)).keys()].map(
+    key => <i key={key} className="fa fa-star" />
+  );
+
+  const renderHalfRatingStar =
+    props.rating % 1 > 0 ? <i class="fa fa-star-half-o" /> : "";
+
+  const renderEmptyRatingStar = [
+    ...Array(Math.floor(5 - props.rating)).keys()
+  ].map(key => <i key={key} className="fa fa-star-o" />);
+
   return (
     <Style>
       {cssStyles.toString()}
@@ -43,11 +54,9 @@ const App = props => {
               </blockquote>
               <div className="footer">
                 <span className="rating text-warning">
-                  <i className="fa fa-star" />
-                  <i className="fa fa-star" />
-                  <i className="fa fa-star" />
-                  <i className="fa fa-star" />
-                  <i className="fa fa-star" />
+                  {renderFullRatingStars}
+                  {renderHalfRatingStar}
+                  {renderEmptyRatingStar}
                 </span>
                 <strong>
                   Bình luận (<i className="text-muted">{props.commentNumber}</i>

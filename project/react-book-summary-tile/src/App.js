@@ -4,7 +4,10 @@ import React from "react";
 import Style from "style-it";
 
 import styles from "./App.css";
-import { propTypes } from "./componentProperties";
+
+import { ReactWebComponent } from "create-react-web-component";
+
+import PropTypes from "prop-types";
 
 const App = props => {
   /*
@@ -23,22 +26,19 @@ const App = props => {
           <div className="row">
             <div className="col col-sm-2 thumbnail">
               <img
-                src="https://salt.tikicdn.com/cache/w1200/ts/product/af/a1/4b/92477ec9b6688060b2b5d2022a60d3e6.jpg"
+                src={props.thumbnailUrl}
                 className="img-fluid"
                 alt="Book Thumbnail"
               />
             </div>
             <div className="col summary">
               <h1>
-                <strong>{props.componentTitle}</strong>
+                <strong>{props.title}</strong>
               </h1>
               <blockquote className="blockquote">
-                <p className="mb-0 text-muted">
-                  Một câu chuyện giản dị, chứa đầy bất ngờ cho tới trang cuối
-                  cùng
-                </p>
+                <p className="mb-0 text-muted">{props.summary}</p>
                 <footer className="blockquote-footer">
-                  <strong>Nguyễn Nhật Ánh</strong>
+                  <strong>{props.author}</strong>
                 </footer>
               </blockquote>
               <div className="footer">
@@ -50,9 +50,10 @@ const App = props => {
                   <i className="fa fa-star" />
                 </span>
                 <strong>
-                  Bình luận (<i className="text-muted">35</i>)
+                  Bình luận (<i className="text-muted">{props.commentNumber}</i>
+                  )
                 </strong>
-                <strong>Nguồn: Tiki</strong>
+                <strong>Nguồn: {props.sourceName}</strong>
               </div>
             </div>
           </div>
@@ -62,6 +63,28 @@ const App = props => {
   );
 };
 
-App.propTypes = propTypes;
+App.propTypes = {
+  summary: PropTypes.string,
+  title: PropTypes.string,
+  thumbnailUrl: PropTypes.string,
+  author: PropTypes.string,
+  commentNumber: PropTypes.number,
+  rating: PropTypes.number,
+  sourceName: PropTypes.string
+};
+
+// Do not set to the component attributes as Angular app interacts with the component via properties only.
+ReactWebComponent.setAttributes({});
+
+ReactWebComponent.setProperties({
+  summary: "",
+  title: "",
+  thumbnailUrl: "",
+  author: "",
+  commentNumber: null,
+  rating: null,
+  sourceName: ""
+});
+ReactWebComponent.render(App, "react-book-summary-tile");
 
 export default App;

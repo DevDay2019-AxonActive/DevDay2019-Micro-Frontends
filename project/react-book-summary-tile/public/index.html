@@ -16,19 +16,20 @@
     />
     <title>React Book Summary Tile</title>
   </head>
-  <!-- <style>
-    body {
-      padding: 0;
-      margin: 0;
-      width: 100vw;
-      padding-top: 150px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #F6FAFA;
-    }
-  </style> -->
   <body>
     <react-book-summary-tile></react-book-summary-tile>
+
+    <script>
+      const component = document.querySelector("react-book-summary-tile");
+      component.title = "Làm bạn với bầu trời";
+      component.thumbnailUrl =
+        "https://salt.tikicdn.com/cache/w1200/ts/product/af/a1/4b/92477ec9b6688060b2b5d2022a60d3e6.jpg";
+      component.summary =
+        "Một câu chuyện giản dị, chứa đầy bất ngờ cho tới trang cuối cùng";
+      component.sourceName = "Tiki";
+      component.author = "Nguyễn Nhật Ánh";
+      component.commentNumber = "35";
+      component.rating = "5";
+    </script>
   </body>
 </html>

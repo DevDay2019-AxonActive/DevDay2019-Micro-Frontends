@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'search-form',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
+  @Output() searchAction: EventEmitter<string> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit() {}
@@ -14,10 +16,8 @@ export class SearchFormComponent implements OnInit {
     if (keyword.length == 0) {
       alert('Hãy nhập sách bạn muốn tìm!');
     } else {
-      // TODO: Call API
-      alert(keyword);
+      this.searchAction.emit(keyword);
     }
-
     return false;
   }
 }

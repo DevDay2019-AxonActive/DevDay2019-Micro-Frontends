@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from './services/search/search.service';
 
 @Component({
   selector: 'app-root',
@@ -19,4 +20,14 @@ export class AppComponent {
   rating = 3.5;
 
   sourceName = 'Tiki';
+
+  books: any[] = [];
+
+  constructor(private searchService: SearchService) {}
+
+  search(event: string) {
+    this.searchService.search(event).subscribe((res: any[]) => {
+      this.books = res;
+    });
+  }
 }

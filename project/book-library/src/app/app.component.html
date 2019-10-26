@@ -1,5 +1,20 @@
+<search-form (searchAction)="search($event)"> </search-form>
+
+<div *ngIf="books.length > 0">
+  <book-summary-tile
+    *ngFor="let book of books"
+    [title]="book.name"
+    [thumbnailUrl]="thumbnailUrl"
+    [summary]="details[0]?.description"
+    [author]="book.author"
+    [commentNumber]="details[0]?.comments.length"
+    [rating]="rating"
+    [sourceName]="details[0]?.source"
+  ></book-summary-tile>
+</div>
+
 <strong>Angular component</strong>
-<book-summary-tile
+<angular-book-summary-tile
   [title]="title"
   [thumbnailUrl]="thumbnailUrl"
   [summary]="summary"
@@ -7,7 +22,7 @@
   [commentNumber]="commentNumber"
   [rating]="rating"
   [sourceName]="sourceName"
-></book-summary-tile>
+></angular-book-summary-tile>
 
 <strong>React component</strong>
 <react-book-summary-tile

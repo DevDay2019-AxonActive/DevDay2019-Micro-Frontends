@@ -1,5 +1,5 @@
 {
-  "name": "book-summary-list",
+  "name": "angular-book-summary-tile",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

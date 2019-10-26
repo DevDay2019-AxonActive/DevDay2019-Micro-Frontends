@@ -7,7 +7,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class BookSummaryTileComponent implements OnInit {
-  static SELECTOR = 'book-summary-tile';
+  static SELECTOR = 'angular-book-summary-tile';
 
   @Input()
   title: string;

@@ -1,0 +1,14 @@
+version: "3"
+services:
+  portal:
+    build: ./book-library
+    ports:
+      - "4200:4200"
+  angular-book-summary-tile:
+    build: ./angular-book-summary-tile
+    ports:
+      - "9091:9091"
+  react-book-summary-tile:
+    build: ./react-book-summary-tile
+    ports:
+      - "9092:9092"

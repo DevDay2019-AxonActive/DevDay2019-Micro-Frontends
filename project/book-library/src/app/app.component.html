@@ -6,7 +6,7 @@
       <ng-container *ngIf="book.details[0].source === 'AAHCM'">
         <angular-book-summary-tile
           [title]="book.name"
-          [thumbnailUrl]="book.details[0].coverUrl"
+          [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
           [summary]="book.details[0].description"
           [author]="book.author"
           [commentNumber]="book.details[0].comments?.length"
@@ -17,7 +17,7 @@
       <ng-container *ngIf="book.details[0].source !== 'AAHCM'">
         <react-book-summary-tile
           [title]="book.name"
-          [thumbnailUrl]="book.details[0].coverUrl"
+          [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
           [summary]="book.details[0].description"
           [author]="book.author"
           [commentNumber]="book.details[0].comments?.length"

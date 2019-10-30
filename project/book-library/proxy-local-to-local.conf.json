@@ -1,0 +1,28 @@
+[
+  {
+    "context": [
+      "/angular-book-summary-tile/**"
+    ],
+    "target": {
+      "host": "localhost",
+      "port": 8081,
+      "protocol": "http"
+    },
+    "pathRewrite": {
+      "^/angular-book-summary-tile/": "/"
+    }
+  },
+  {
+    "context": [
+      "/react-book-summary-tile/**"
+    ],
+    "target": {
+      "host": "localhost",
+      "port": 8082,
+      "protocol": "http"
+    },
+    "pathRewrite": {
+      "^/react-book-summary-tile/": "/"
+    }
+  }
+]

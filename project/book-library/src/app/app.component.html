@@ -1,16 +1,6 @@
 <search-form (searchAction)="search($event)"> </search-form>
 
 <div *ngIf="books.length > 0">
-  <!--book-summary-tile
-    *ngFor="let book of books"
-    [title]="book.name"
-    [thumbnailUrl]="thumbnailUrl"
-    [summary]="details[0]?.description"
-    [author]="book.author"
-    [commentNumber]="details[0]?.comments.length"
-    [rating]="rating"
-    [sourceName]="details[0]?.source"
-  ></book-summary-tile-->
   <ng-container *ngFor="let book of books">
     <ng-container *ngIf="book.details && book.details.length > 0">
       <ng-container *ngIf="book.details[0].source === 'AAHCM'">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: BookSummaryTileComponent.SELECTOR,
@@ -8,6 +8,9 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 })
 export class BookSummaryTileComponent implements OnInit {
   static SELECTOR = 'angular-book-summary-tile';
+
+  @Input()
+  id: number;
 
   @Input()
   title: string;
@@ -32,7 +35,17 @@ export class BookSummaryTileComponent implements OnInit {
   @Input()
   sourceName: string;
 
-  constructor() {}
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {}
+
+  @HostListener('click')
+  onClick() {
+    const event = new CustomEvent('clicked', {
+      detail: {
+        bookId: this.id
+      }
+    });
+    this.el.nativeElement.dispatchEvent(event);
+  }
 }

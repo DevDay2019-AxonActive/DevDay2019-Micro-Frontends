@@ -10,6 +10,7 @@
           [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
           [summary]="book.details[0].description"
           [author]="book.author"
+          [commentNumber]="book.details[0].comments?.length"
           [rating]="5"
           [sourceName]="book.details[0].source"
           (clicked)=onClicked($event)
@@ -22,6 +23,7 @@
           [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
           [summary]="book.details[0].description"
           [author]="book.author"
+          [commentNumber]="book.details[0].comments?.length"
           [rating]="5"
           [sourceName]="book.details[0].source"
           (clicked)=onClicked($event)

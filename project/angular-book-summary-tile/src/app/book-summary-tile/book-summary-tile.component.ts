@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, EventEmitter, HostListener, ElementRef, OnChanges } from '@angular/core';
 
 @Component({
   selector: BookSummaryTileComponent.SELECTOR,
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter, Host
   styleUrls: ['./book-summary-tile.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class BookSummaryTileComponent implements OnInit {
+export class BookSummaryTileComponent implements OnChanges {
   static SELECTOR = 'angular-book-summary-tile';
 
   @Input()
@@ -35,10 +35,16 @@ export class BookSummaryTileComponent implements OnInit {
   @Input()
   sourceName: string;
 
+  fullRatingStars: any[];
+  emptyRatingStars: any[];
+  
   constructor(private el: ElementRef) {}
-
-  ngOnInit(): void {}
-
+  
+  ngOnChanges(): void {
+    this.fullRatingStars = [].constructor(Math.floor(this.rating));
+    this.emptyRatingStars = [].constructor(Math.floor(5 - this.rating));
+  }
+  
   @HostListener('click')
   onClick() {
     const event = new CustomEvent('clicked', {

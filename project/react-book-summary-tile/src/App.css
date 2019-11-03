@@ -34,7 +34,7 @@
 }
 
 .summary {
-  padding-left: 0;
+  padding-left: 10px;
 }
 
 .summary blockquote.blockquote {
@@ -43,6 +43,10 @@
 
 .summary .rating {
   font-size: 20px;
+}
+
+.summary footer {
+  margin-bottom: 10px;
 }
 
 .summary .footer > * {

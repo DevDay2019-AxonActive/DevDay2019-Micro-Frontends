@@ -1,0 +1,9 @@
+.search-bar-container {
+  margin-top: 20px;
+}
+
+.book-list-item {
+  margin: 10px auto;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}

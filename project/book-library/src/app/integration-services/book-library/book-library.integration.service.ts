@@ -1,7 +1,7 @@
 import { Injectable, ErrorHandler } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Book } from '../models/book.model';
+import { Book } from '../../models/book.model';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({

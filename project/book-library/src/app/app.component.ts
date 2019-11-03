@@ -22,4 +22,8 @@ export class AppComponent {
       this.books = res;
     });
   }
+
+  onClicked($event) {
+    console.log('navigateTo ' + $event.detail.bookId);
+  }
 }

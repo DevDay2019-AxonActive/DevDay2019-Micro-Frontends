@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, EventEmitter, HostListener, ElementRef, OnChanges } from '@angular/core';
 
 @Component({
   selector: BookSummaryTileComponent.SELECTOR,
@@ -8,6 +8,9 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges } from '@angular
 })
 export class BookSummaryTileComponent implements OnChanges {
   static SELECTOR = 'angular-book-summary-tile';
+
+  @Input()
+  id: number;
 
   @Input()
   title: string;
@@ -32,13 +35,23 @@ export class BookSummaryTileComponent implements OnChanges {
   @Input()
   sourceName: string;
 
-  constructor() {}
-
   fullRatingStars: any[];
   emptyRatingStars: any[];
-
+  
+  constructor(private el: ElementRef) {}
+  
   ngOnChanges(): void {
     this.fullRatingStars = [].constructor(Math.floor(this.rating));
     this.emptyRatingStars = [].constructor(Math.floor(5 - this.rating));
+  }
+  
+  @HostListener('click')
+  onClick() {
+    const event = new CustomEvent('clicked', {
+      detail: {
+        bookId: this.id
+      }
+    });
+    this.el.nativeElement.dispatchEvent(event);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges } from '@angular/core';
 
 @Component({
   selector: BookSummaryTileComponent.SELECTOR,
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./book-summary-tile.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class BookSummaryTileComponent implements OnInit {
+export class BookSummaryTileComponent implements OnChanges {
   static SELECTOR = 'angular-book-summary-tile';
 
   @Input()
@@ -34,5 +34,11 @@ export class BookSummaryTileComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  fullRatingStars: any[];
+  emptyRatingStars: any[];
+
+  ngOnChanges(): void {
+    this.fullRatingStars = [].constructor(Math.floor(this.rating));
+    this.emptyRatingStars = [].constructor(Math.floor(5 - this.rating));
+  }
 }

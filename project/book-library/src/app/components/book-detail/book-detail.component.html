@@ -1,0 +1,31 @@
+<div *ngIf="!bookDetail">Đang tải thông tin sách...</div>
+<div class="container" *ngIf="bookDetail">
+  <div class="row">
+    <div class="col col-sm-2 thumbnail">
+      <img src="{{ bookDetail.details[0].coverUrl }}" class="img-fluid" alt="Book thumbnail" />
+    </div>
+    <div class="col summary d-flex flex-column">
+      <h1 class="mb-0">
+        <strong>{{ bookDetail.name }}</strong>
+      </h1>
+      <blockquote class="blockquote">
+        <footer class="blockquote-footer">
+          <strong>{{ bookDetail.author }}</strong>
+        </footer>
+        <p class="mb-0 text-muted block-with-text">{{ bookDetail.details[0].description }}</p>
+      </blockquote>
+      <div class="footer mt-auto">
+        <span class="rating text-warning">
+          <i class="fa fa-star" *ngFor="let r of fullRatingStars"></i>
+          <i class="fa fa-star-half-o" *ngIf="rating % 1 > 0"></i>
+          <i class="fa fa-star-o" *ngFor="let r of emptyRatingStars"></i>
+        </span>
+        <strong
+          >Bình luận (<i class="text-muted">{{ bookDetail.details[0].comments?.length }}</i
+          >)</strong
+        >
+        <strong>Nguồn: {{ bookDetail.details[0].comments?.length }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

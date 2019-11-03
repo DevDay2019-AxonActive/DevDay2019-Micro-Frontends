@@ -7,10 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatInputModule],
+  declarations: [AppComponent, HomeComponent, SearchFormComponent, BookDetailComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatInputModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

@@ -1,0 +1,39 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+
+.container {
+  min-height: 200px;
+}
+
+.thumbnail {
+  padding-right: 0;
+}
+
+.summary {
+  padding-left: 10px;
+
+  blockquote.blockquote {
+    margin-bottom: 0;
+  }
+
+  .rating {
+    font-size: 20px;
+  }
+
+  .footer {
+    margin-bottom: 10px;
+    > * {
+      margin-right: 10px;
+    }
+  }
+
+  .block-with-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: 1.2; /* fallback */
+    max-height: 2.4;
+  }
+}

@@ -1,15 +1,17 @@
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import fontawesome from "font-awesome/css/font-awesome.css";
-import React from "react";
+import React, { useContext } from "react";
 import Style from "style-it";
 
 import styles from "./App.css";
 
-import { ReactWebComponent } from "create-react-web-component";
+import { ReactWebComponent, EventContext } from "create-react-web-component";
 
 import PropTypes from "prop-types";
 
 const App = props => {
+  const dispatch = useContext(EventContext);
+
   /*
    * This is a workaround to import external css files as @import does not work properly
    */
@@ -23,16 +25,25 @@ const App = props => {
   );
 
   const renderHalfRatingStar =
-    props.rating % 1 > 0 ? <i class="fa fa-star-half-o" /> : "";
+    props.rating % 1 > 0 ? <i className="fa fa-star-half-o" /> : "";
 
   const renderEmptyRatingStar = [
     ...Array(Math.floor(5 - props.rating)).keys()
   ].map(key => <i key={key} className="fa fa-star-o" />);
 
+  const handleClick = () => {
+    const event = new CustomEvent("clicked", {
+      detail: {
+        bookId: props.id
+      }
+    });
+    dispatch(event);
+  };
+
   return (
     <Style>
       {cssStyles.toString()}
-      <div className="app">
+      <div className="app" onClick={handleClick}>
         <div className="container">
           <div className="row">
             <div className="col col-sm-2 thumbnail">
@@ -75,6 +86,7 @@ const App = props => {
 };
 
 App.propTypes = {
+  id: PropTypes.number,
   summary: PropTypes.string,
   title: PropTypes.string,
   thumbnailUrl: PropTypes.string,
@@ -88,6 +100,7 @@ App.propTypes = {
 ReactWebComponent.setAttributes({});
 
 ReactWebComponent.setProperties({
+  id: null,
   summary: "",
   title: "",
   thumbnailUrl: "",

@@ -54,7 +54,7 @@ const App = props => {
               />
             </div>
             <div className="col summary d-flex flex-column">
-              <h1>
+              <h1 class="mb-0">
                 <strong>{props.title}</strong>
               </h1>
               <blockquote className="blockquote">

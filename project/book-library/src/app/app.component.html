@@ -1,30 +1,41 @@
-<search-form (searchAction)="search($event)"> </search-form>
-
-<div *ngIf="books.length > 0">
-  <ng-container *ngFor="let book of books">
-    <ng-container *ngIf="book.details && book.details.length > 0">
-      <ng-container *ngIf="book.details[0].source === 'AAHCM'">
-        <angular-book-summary-tile
-          [title]="book.name"
-          [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
-          [summary]="book.details[0].description"
-          [author]="book.author"
-          [commentNumber]="book.details[0].comments?.length"
-          [rating]="5"
-          [sourceName]="book.details[0].source"
-        ></angular-book-summary-tile>
+<div class="row">
+  <div class="col search-bar-container">
+    <search-form (searchAction)="search($event)"> </search-form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div *ngIf="books.length > 0">
+      <ng-container *ngFor="let book of books">
+        <ng-container *ngIf="book.details && book.details.length > 0">
+          <ng-container *ngIf="book.details[0].source === 'AAHCM'">
+            <div class="book-list-item">
+              <angular-book-summary-tile
+                [title]="book.name"
+                [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
+                [summary]="book.details[0].description"
+                [author]="book.author"
+                [commentNumber]="book.details[0].comments?.length"
+                [rating]="5"
+                [sourceName]="book.details[0].source"
+              ></angular-book-summary-tile>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="book.details[0].source !== 'AAHCM'">
+            <div class="book-list-item">
+              <react-book-summary-tile
+                [title]="book.name"
+                [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
+                [summary]="book.details[0].description"
+                [author]="book.author"
+                [commentNumber]="book.details[0].comments?.length"
+                [rating]="5"
+                [sourceName]="book.details[0].source"
+              ></react-book-summary-tile>
+            </div>
+          </ng-container>
+        </ng-container>
       </ng-container>
-      <ng-container *ngIf="book.details[0].source !== 'AAHCM'">
-        <react-book-summary-tile
-          [title]="book.name"
-          [thumbnailUrl]="book.details[0].coverUrl || 'assets/empty-thumbnail-placeholder.png'"
-          [summary]="book.details[0].description"
-          [author]="book.author"
-          [commentNumber]="book.details[0].comments?.length"
-          [rating]="5"
-          [sourceName]="book.details[0].source"
-        ></react-book-summary-tile>
-      </ng-container>
-    </ng-container>
-  </ng-container>
+    </div>
+  </div>
 </div>

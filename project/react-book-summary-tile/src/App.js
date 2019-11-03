@@ -47,10 +47,12 @@ const App = props => {
                 <strong>{props.title}</strong>
               </h1>
               <blockquote className="blockquote">
-                <p className="mb-0 text-muted">{props.summary}</p>
                 <footer className="blockquote-footer">
                   <strong>{props.author}</strong>
                 </footer>
+                <p className="mb-0 text-muted block-with-text">
+                  {props.summary}
+                </p>
               </blockquote>
               <div className="footer mt-auto">
                 <span className="rating text-warning">

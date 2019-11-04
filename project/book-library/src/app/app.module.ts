@@ -12,14 +12,14 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
-
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, SearchFormComponent, BookDetailComponent],
   imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatInputModule, MatCardModule, MatButtonModule,
-    MatIconModule],
+    MatIconModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LoginIntegrationService} from '../../integration-services/login/login.integration.service';
+import {AuthenticationService} from '../../services/authenticate-service/authentication.service';
 
 @Component({
   selector: 'app-login-page',
@@ -9,17 +11,31 @@ export class LoginPageComponent {
 
   username: string;
   password: string;
-  constructor() { }
+  message: string;
+
+  constructor(private loginService: LoginIntegrationService, private authenticationService: AuthenticationService) { }
 
   login() : void {
-    //   try {
-    //   if(this.username && this.password){
-    //     this.authService.login(this.username,this.password);
-    //   }else {
-    //     alert("Invalid credentials");
-    //   }
-    // } catch(error){
-    //   console.log(error);
-    // }
+    try {
+      if (this.username && this.password) {
+        this.loginService.login(this.username, this.password).subscribe(user => {
+          if(user == undefined) {
+            this.message = "Invalid credentials";
+          } else {
+            this.authenticationService.storeUser(JSON.stringify(user));
+          }
+        });
+      } else {
+        this.message = "Please enter username and password";
+      }
+    } catch (error) {
+      this.message = "Can't validate";
+      console.log(error);
+    }
+  }
+
+  //reset the message when user changes username or password
+  onChange() : void {
+    this.message = undefined;
   }
 }

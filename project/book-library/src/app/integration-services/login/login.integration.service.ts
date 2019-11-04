@@ -8,15 +8,13 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LoginIntegrationService {
-  private readonly apiUrl = 'http://85.214.44.228:8082/user/';
+  private readonly apiUrl = 'http://85.214.44.228:8082/user';
 
   constructor(private http$: HttpClient, private errorHandler: ErrorHandler) {}
 
   public login(username: string, password: string): Observable<User> {
     const url = this.apiUrl + '/login';
-    const httpParams = new HttpParams();
-    httpParams.set('username', username);
-    httpParams.set('password', password);
+    const httpParams = new HttpParams().set('username', username).set('password', password);
     return this.http$.get<User>(url, { params: httpParams }).pipe(
       catchError(error => {
         this.errorHandler.handleError(error);

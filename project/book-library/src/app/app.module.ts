@@ -11,20 +11,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
-import {RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
-
-const appRoutes: Routes = [
-  {
-    path: "/login",
-    component: LoginPageComponent
-  }
-]
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent, LoginPageComponent],
+  declarations: [AppComponent, HomeComponent, SearchFormComponent, BookDetailComponent],
   imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatInputModule, MatCardModule, MatButtonModule,
     MatIconModule],
   providers: [],

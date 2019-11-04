@@ -14,10 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchFormComponent, BookDetailComponent],
+  declarations: [AppComponent, HomeComponent, SearchFormComponent, BookDetailComponent, LoginPageComponent],
   imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatInputModule, MatCardModule, MatButtonModule,
     MatIconModule, AppRoutingModule],
   providers: [],

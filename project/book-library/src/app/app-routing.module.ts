@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuardService, AnonymousGuardService } from './services/guard/guard.service';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [GuardService] },

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 import {LoginIntegrationService} from '../../integration-services/login/login.integration.service';
 import {AuthenticationService} from '../../services/authenticate-service/authentication.service';
 
@@ -13,7 +14,9 @@ export class LoginPageComponent {
   password: string;
   message: string;
 
-  constructor(private loginService: LoginIntegrationService, private authenticationService: AuthenticationService) { }
+  constructor(private loginService: LoginIntegrationService,
+    private authenticationService: AuthenticationService,
+    private router: Router) { }
 
   login() : void {
     try {
@@ -22,7 +25,8 @@ export class LoginPageComponent {
           if(user == undefined) {
             this.message = "Invalid credentials";
           } else {
-            this.authenticationService.storeUser(JSON.stringify(user));
+            this.authenticationService.storeUser(user);
+            this.router.navigateByUrl('/');
           }
         });
       } else {

@@ -1,0 +1,28 @@
+.login-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.login-container {
+  width: 350px;
+  padding: 30px;
+}
+
+.login-container .mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container .mat-card-header .mat-icon{
+  font-size: 50px;
+  color: crimson;
+}
+
+.login-container  * {
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}

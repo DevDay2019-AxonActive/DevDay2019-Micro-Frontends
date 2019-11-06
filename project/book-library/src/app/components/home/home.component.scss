@@ -16,3 +16,19 @@
 .mat-form-field {
   font-size: 20px;
 }
+
+.search-bar-container {
+  margin-top: 20px;
+}
+
+.book-list-item {
+  cursor: pointer;
+  margin: 10px auto;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+
+  &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    background-color: rgba(204, 219, 250, 0.2);
+  }
+}

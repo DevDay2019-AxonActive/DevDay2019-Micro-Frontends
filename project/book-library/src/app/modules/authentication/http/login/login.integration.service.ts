@@ -1,21 +1,21 @@
 import { Injectable, ErrorHandler } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { User } from '../../models/book.model';
 import { catchError } from 'rxjs/operators';
+import {AuthenticationModule} from '../../authentication.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: AuthenticationModule,
 })
 export class LoginIntegrationService {
   private readonly apiUrl = 'http://85.214.44.228:8082/user';
 
   constructor(private http$: HttpClient, private errorHandler: ErrorHandler) {}
 
-  public login(username: string, password: string): Observable<User> {
+  public login(username: string, password: string): Observable<any> {
     const url = this.apiUrl + '/login';
     const httpParams = new HttpParams().set('username', username).set('password', password);
-    return this.http$.get<User>(url, { params: httpParams }).pipe(
+    return this.http$.get<any>(url, { params: httpParams }).pipe(
       catchError(error => {
         this.errorHandler.handleError(error);
         return of(undefined);
@@ -23,7 +23,7 @@ export class LoginIntegrationService {
     );
   }
 
-  public registration(user: User): Observable<HttpResponse<string>> {
+  public registration(user: any): Observable<HttpResponse<string>> {
     const url = this.apiUrl + '/registration';
     return this.http$.post<HttpResponse<string>>(url, user).pipe(
       catchError(error => {

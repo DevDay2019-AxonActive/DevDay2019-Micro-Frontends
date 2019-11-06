@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LinhTH/DevDay-MicroFrontEnd-CLI.git"
+    "url": "git+https://github.com/DevDay2019-AxonActive/DevDay2019-Micro-Frontends.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LinhTH/DevDay-MicroFrontEnd-CLI/issues"
+    "url": "https://github.com/DevDay2019-AxonActive/DevDay2019-Micro-Frontends/issues"
   },
-  "homepage": "https://github.com/LinhTH/DevDay-MicroFrontEnd-CLI#readme",
+  "homepage": "https://github.com/DevDay2019-AxonActive/DevDay2019-Micro-Frontends#readme",
   "dependencies": {
     "chalk": "^2.4.2",
     "clear": "^0.1.0",

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MicroFrontend</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <angular-component-name team-name='team-name-template'></angular-component-name>
+
+    <script>
+      const component = document.querySelector("angular-component-name");
+      component.addEventListener("clicked", (event) => {
+        alert(`${event.detail.message}, You have just clicked!! 🚀` );
+      });
+    </script>
+  </body>
+</html>

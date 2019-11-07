@@ -214,4 +214,6 @@ const printCompletionScreen = () => {
     `);
 };
 
-run();
+export async function cli() {
+  await run();
+}

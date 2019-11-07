@@ -1,10 +1,10 @@
 {
   "name": "aavn-mc-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A CLI is built for the AAVN Devday purpose",
-  "main": "src/cli.js",
+  "main": "bin/mc",
   "bin": {
-    "@aavn/mc": "bin/mc",
+    "aavn-mc-cli": "bin/mc",
     "mc": "bin/mc"
   },
   "publishConfig": {

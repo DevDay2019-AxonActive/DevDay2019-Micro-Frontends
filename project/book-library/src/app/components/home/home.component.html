@@ -4,6 +4,11 @@
     <search-form (searchAction)="search($event)"> </search-form>
   </div>
 </div>
+<div *ngIf="isLoading" class="loading">
+  <img class="loading-image" src="../../../assets/images/loading.gif" />
+  <div class="text-align-center">Sorry các bạn. API chậm quá. Chúng tôi đã cố gắng hết sức...</div>
+  <div class="text-align-center">Sorry guys. API is too slow. We tried our best...</div>
+</div>
 <div class="row">
   <div class="col">
     <div *ngIf="books.length > 0">

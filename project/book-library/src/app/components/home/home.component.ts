@@ -10,6 +10,7 @@ import { Book } from 'src/app/models/book.model';
 })
 export class HomeComponent {
   books: Book[] = [];
+  isLoading = false;
 
   constructor(private bookLibraryService: BookLibraryService, private router: Router) {}
 
@@ -20,7 +21,9 @@ export class HomeComponent {
     this.books.push(book1);
     this.books.push(book2);
     */
+    this.isLoading = true;
     this.bookLibraryService.getBooks(event).subscribe((res: Book[]) => {
+      this.isLoading = false;
       this.books = res;
     });
   }

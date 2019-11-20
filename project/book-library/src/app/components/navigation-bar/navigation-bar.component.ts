@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { User } from '../../models/book.model';
-import { Router } from '@angular/router';
-import {AuthenticationService} from '../../services/authenticate-service/authentication.service';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {User} from '../../models/book.model';
+import {AuthenticationService} from '../../modules/authentication';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,14 +10,17 @@ import {AuthenticationService} from '../../services/authenticate-service/authent
 })
 export class NavigationBarComponent {
 
-  user : User;
-  constructor(private authenticationService: AuthenticationService,
-    private router: Router) {
+  user: User;
+
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router,
+  ) {
     this.user = authenticationService.getUser();
   }
 
   logout() {
     this.authenticationService.removeUser();
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl('/login');
   }
 }

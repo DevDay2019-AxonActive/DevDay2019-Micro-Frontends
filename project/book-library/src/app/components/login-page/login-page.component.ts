@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {LoginIntegrationService} from '../../integration-services/login/login.integration.service';
-import {AuthenticationService} from '../../services/authenticate-service/authentication.service';
+import {AuthenticationService} from '../../modules/authentication';
 
 @Component({
   selector: 'app-login-page',
@@ -14,32 +13,32 @@ export class LoginPageComponent {
   password: string;
   message: string;
 
-  constructor(private loginService: LoginIntegrationService,
+  constructor(
     private authenticationService: AuthenticationService,
-    private router: Router) { }
+    private router: Router) {
+  }
 
-  login() : void {
+  login(): void {
     try {
       if (this.username && this.password) {
-        this.loginService.login(this.username, this.password).subscribe(user => {
-          if(user == undefined) {
-            this.message = "Invalid credentials";
+        this.authenticationService.login(this.username, this.password).subscribe(user => {
+          if (user === undefined) {
+            this.message = 'Invalid credentials';
           } else {
-            this.authenticationService.storeUser(user);
             this.router.navigateByUrl('/');
           }
         });
       } else {
-        this.message = "Please enter username and password";
+        this.message = 'Please enter username and password';
       }
     } catch (error) {
-      this.message = "Can't validate";
+      this.message = 'Can\'t validate';
       console.log(error);
     }
   }
 
   //reset the message when user changes username or password
-  onChange() : void {
+  onChange(): void {
     this.message = undefined;
   }
 }

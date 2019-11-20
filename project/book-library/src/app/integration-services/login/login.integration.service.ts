@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LoginIntegrationService {
-  private readonly apiUrl = 'http://85.214.44.228:8082/user';
+  private readonly apiUrl = 'http://85.214.44.228:18080/user';
 
   constructor(private http$: HttpClient, private errorHandler: ErrorHandler) {}
 
